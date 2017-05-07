@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Learn-For-Fun:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Learn-For-Fun-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Learn-For-Fun:war exploded" />
+    </root>
+  </artifact>
+</component>

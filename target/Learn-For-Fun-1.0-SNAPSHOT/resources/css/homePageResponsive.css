@@ -1,0 +1,111 @@
+@media only screen and (max-width: 1400px) {
+    header {
+        /*margin-left: 605px;*/
+    }
+
+    .hoverbutton {
+        font-size: 28px;
+        padding: 20px;
+        width: 250px;
+        margin-left: 270px;
+    }
+}
+
+@media only screen and (max-width: 1285px) {
+    header {
+        /*margin-left: 605px;*/
+    }
+
+    .hoverbutton {
+        font-size: 28px;
+        padding: 20px;
+        width: 250px;
+        margin-left: 270px;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    header {
+        /*margin-left: 500px;*/
+    }
+
+    .hoverbutton {
+        font-size: 28px;
+        padding: 20px;
+        width: 250px;
+        margin-left: 190px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    header {
+        /*margin-left: 440px;*/
+    }
+
+    .hoverbutton {
+        font-size: 24px;
+        padding: 20px;
+        width: 200px;
+        margin-left: 190px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    header {
+        /*margin-left: 415px;*/
+    }
+
+    .hoverbutton {
+        font-size: 22px;
+        padding: 18px;
+        width: 180px;
+        margin-left: 190px;
+    }
+
+}
+
+@media only screen and (max-width: 830px) {
+    header {
+        /*margin-left: 390px;*/
+
+    }
+
+    .hoverbutton {
+        font-size: 20px;
+        padding: 15px;
+        width: 150px;
+        margin-left: 170px;
+    }
+
+}
+
+@media only screen and (max-width: 680px) {
+    header {
+        /*margin-left: 280px;*/
+
+    }
+
+    .hoverbutton {
+        font-size: 18px;
+        padding: 15px;
+        width: 120px;
+        margin-left: 140px;
+    }
+
+}
+
+@media only screen and (max-width: 530px) {
+    header {
+        /*margin-left: 210px;*/
+
+    }
+
+    .hoverbutton {
+        font-size: 15px;
+        padding: 15px;
+        width: 120px;
+        margin-left: 100px;
+    }
+
+}
+

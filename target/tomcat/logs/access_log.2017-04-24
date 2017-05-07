@@ -1,0 +1,16 @@
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:52:57 +0200] "GET /Learn-For-Fun HTTP/1.1" 302 - http-bio-8080-exec-2 0
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:15 +0200] "GET /Learn-For-Fun/ HTTP/1.1" 200 2107 http-bio-8080-exec-3 17340
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:16 +0200] "GET /Learn-For-Fun/hangMan/teacher/1/1 HTTP/1.1" 200 5138 http-bio-8080-exec-4 10338
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:17 +0200] "GET /Learn-For-Fun/resources/css/hangman.css;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 3003 http-bio-8080-exec-6 102
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:17 +0200] "GET /Learn-For-Fun/resources/css/learnforfun.css;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 4260 http-bio-8080-exec-8 116
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:17 +0200] "GET /Learn-For-Fun/resources/css/bootstrap.min.css;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 121200 http-bio-8080-exec-7 132
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:17 +0200] "GET /Learn-For-Fun/resources/js/angular.min.js;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 167131 http-bio-8080-exec-6 47
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:17 +0200] "GET /Learn-For-Fun/resources/js/hangman.js;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 5643 http-bio-8080-exec-10 178
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:17 +0200] "GET /Learn-For-Fun/resources/js/angualr-controllers/app.js;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 36 http-bio-8080-exec-8 12
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:17 +0200] "GET /Learn-For-Fun/resources/js/users.js;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 2834 http-bio-8080-exec-9 190
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:17 +0200] "GET /Learn-For-Fun/resources/js/bootstrap.min.js;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 37045 http-bio-8080-exec-1 41
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:17 +0200] "GET /Learn-For-Fun/resources/js/vendor/jquery-1.12.0.min.js;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 97362 http-bio-8080-exec-2 223
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:17 +0200] "GET /Learn-For-Fun/resources/img/logo8.png;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 4592 http-bio-8080-exec-1 60
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:21 +0200] "GET /Learn-For-Fun/resources/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028 http-bio-8080-exec-2 179
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:37 +0200] "GET /Learn-For-Fun/resources/img/img4.jpg;jsessionid=C82D1DE130B28399AAD4F51263BCD05C HTTP/1.1" 200 10225847 http-bio-8080-exec-1 15988
+0:0:0:0:0:0:0:1 - - [24/Apr/2017:11:53:42 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-4 0
