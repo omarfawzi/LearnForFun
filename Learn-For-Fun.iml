@@ -71,5 +71,7 @@
     <orderEntry type="library" name="Maven: asm:asm-analysis:3.2" level="project" />
     <orderEntry type="library" name="Maven: asm:asm-tree:3.2" level="project" />
     <orderEntry type="library" name="Maven: xml-apis:xml-apis:1.0.b2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:1.4.2.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:1.4.2.RELEASE" level="project" />
   </component>
 </module>

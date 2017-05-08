@@ -3,6 +3,7 @@ import learnforfun.mvc.DAO.UserDAO;
 import learnforfun.mvc.DAOImp.UserDAOImpl;
 import learnforfun.mvc.Models.*;
 import learnforfun.mvc.Services.*;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -10,6 +11,8 @@ import java.util.ArrayList;
 
 @RestController
 @EnableWebMvc
+@EnableAutoConfiguration
+
 public class HomeController {
     private StudentValidation student = new StudentValidation();
     private TeacherValidation teacher = new TeacherValidation();
