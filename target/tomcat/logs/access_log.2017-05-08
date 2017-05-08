@@ -1,0 +1,12 @@
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:04:54 +0300] "GET /Learn-For-Fun HTTP/1.1" 302 - http-bio-8080-exec-2 0
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:04:58 +0300] "GET /Learn-For-Fun/ HTTP/1.1" 500 5774 http-bio-8080-exec-3 4093
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:05:12 +0300] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-4 0
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:06:37 +0300] "GET /Learn-For-Fun HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:06:46 +0300] "GET /Learn-For-Fun/ HTTP/1.1" 200 1966 http-bio-8080-exec-2 9172
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:06:46 +0300] "GET /Learn-For-Fun/resources/css/homePageResponsive.css;jsessionid=0E0CA306BFF951B4ADE1B2E80E8722FB HTTP/1.1" 200 1898 http-bio-8080-exec-5 73
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:06:46 +0300] "GET /Learn-For-Fun/resources/css/learnforfun.css;jsessionid=0E0CA306BFF951B4ADE1B2E80E8722FB HTTP/1.1" 200 4219 http-bio-8080-exec-4 82
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:06:46 +0300] "GET /Learn-For-Fun/resources/js/vendor/jquery-1.12.0.min.js;jsessionid=0E0CA306BFF951B4ADE1B2E80E8722FB HTTP/1.1" 200 97362 http-bio-8080-exec-6 75
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:06:46 +0300] "GET /Learn-For-Fun/resources/js/bootstrap.min.js;jsessionid=0E0CA306BFF951B4ADE1B2E80E8722FB HTTP/1.1" 200 37045 http-bio-8080-exec-7 66
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:06:46 +0300] "GET /Learn-For-Fun/resources/css/bootstrap.min.css;jsessionid=0E0CA306BFF951B4ADE1B2E80E8722FB HTTP/1.1" 200 121200 http-bio-8080-exec-3 116
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:06:46 +0300] "GET /Learn-For-Fun/resources/img/logo8.png;jsessionid=0E0CA306BFF951B4ADE1B2E80E8722FB HTTP/1.1" 200 4592 http-bio-8080-exec-7 23
+0:0:0:0:0:0:0:1 - - [08/May/2017:08:06:49 +0300] "GET /Learn-For-Fun/resources/img/img4.jpg;jsessionid=0E0CA306BFF951B4ADE1B2E80E8722FB HTTP/1.1" 200 10225847 http-bio-8080-exec-7 854
