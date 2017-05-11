@@ -35,4 +35,6 @@ learnforfun\mvc\Models\HangMan.class
 learnforfun\mvc\Models\Degree.class
 learnforfun\mvc\Services\Validation.class
 learnforfun\mvc\Models\Achievement.class
+learnforfun\mvc\Services\ProfileFactory.class
 learnforfun\mvc\Services\TFService.class
+learnforfun\mvc\Services\ValidationFactory.class

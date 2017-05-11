@@ -6,16 +6,15 @@ import learnforfun.mvc.Services.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 @RestController
 @EnableWebMvc
 
 public class HomeController {
-    private StudentValidation student = new StudentValidation();
-    private TeacherValidation teacher = new TeacherValidation();
-    private TeacherProfile teacherProfile = new TeacherProfile();
-    private StudentProfile studentProfile = new StudentProfile();
+    private ValidationFactory validation = new ValidationFactory();
+    private ProfileFactory profile = new ProfileFactory();
     private CourseService courseService = new CourseService();
     private TFService tfService = new TFService();
     private MCQService mcqService = new MCQService();
@@ -55,44 +54,28 @@ public class HomeController {
     @RequestMapping(value = "/sign/{type}/{mail}/{password}/{userName}/{phone}/{firstName}/{lastName}/{bDate}/{gender}", method = RequestMethod.POST)
     public @ResponseBody
     Integer SignUp(@ModelAttribute Account object, @PathVariable("type") String type) {
-        int ret = 0;
-        if (type.equals("teacher"))
-            ret = teacher.SignUp(object);
-        else if (type.equals("student"))
-            ret = student.SignUp(object);
-        if (ret >= 0)
-            userDAO.insert(object.getUserName());
-        return ret;
+        try {
+            return validation.getValidation(type).SignUp(object);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        };
+        return 0;
     }
 
     @RequestMapping(value = "/sign/{type}/{mail}/{password}", method = RequestMethod.POST)
     public @ResponseBody
     Integer SignIn(@ModelAttribute Account object, @PathVariable("type") String type) {
-        int ret = 0;
-        Account acc = new Account();
-        if (type.equals("teacher")) {
-            ret = teacher.SignIn(object.getMail(), object.getPassword());
-            acc = teacherProfile.getAccount(ret);
-        }
-        else if (type.equals("student")) {
-            ret = student.SignIn(object.getMail(), object.getPassword());
-            acc = studentProfile.getAccount(ret);
-        }
+        int ret = validation.getValidation(type).SignIn(object.getMail(),object.getPassword());;
         if (ret >= 0)
-            userDAO.insert(acc.getUserName());
+            userDAO.insert(profile.getProfile(type).getAccount(ret).getUserName());
         return ret;
     }
 
     @RequestMapping(value = "/profile/{type}/{userID}")
     public @ResponseBody
     ModelAndView homepageView(@PathVariable("type") String type, @PathVariable("userID") int userID){
-        Account acc = new Account();
         ModelAndView modelandview = new ModelAndView();
-        if (type.equals("teacher")) {
-            acc = teacherProfile.getAccount(userID);
-        } else if (type.equals("student")) {
-            acc = studentProfile.getAccount(userID);
-        }
+        Account acc = new Account(profile.getProfile(type).getAccount(userID));
         if ( (!type.equals("teacher") && !type.equals("student")) || (acc == null)){
             modelandview.setViewName("404");
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun");
@@ -115,14 +98,8 @@ public class HomeController {
     @RequestMapping(value = "/profileSettings/{type}/{userID}")
     public @ResponseBody
     ModelAndView profileView(@PathVariable("type") String type, @PathVariable("userID") int userID) {
-        Account acc = new Account();
         ModelAndView modelandview = new ModelAndView();
-
-        if (type.equals("teacher")) {
-            acc = teacherProfile.getAccount(userID);
-        } else if (type.equals("student")) {
-            acc = studentProfile.getAccount(userID);
-        }
+        Account acc = new Account(profile.getProfile(type).getAccount(userID));
         if ( (!type.equals("teacher") && !type.equals("student")) || (acc == null)){
             modelandview.setViewName("404");
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
@@ -145,27 +122,14 @@ public class HomeController {
     @RequestMapping(value = "/profileSettings/update/{type}/{userID}/{mail}/{password}/{phone}/{firstName}/{lastName}/{bDate}/{gender}", method = RequestMethod.POST)
     public @ResponseBody
     Boolean UpdateProfile(@ModelAttribute Account object, @PathVariable("type") String type) {
-        boolean ret = false;
-        if (type.equals("teacher")) {
-            ret = teacherProfile.updateAccount(object);
-        } else if (type.equals("student")) {
-            ret = studentProfile.updateAccount(object);
-        }
-        return ret;
+        return profile.getProfile(type).updateAccount(object);
     }
 
     @RequestMapping(value = "/createCourse/{type}/{userID}", method = RequestMethod.GET)
     public @ResponseBody
     ModelAndView createcourseView(@PathVariable("type") String type, @PathVariable("userID") int userID){
-        Account acc = new Account();
+        Account acc = new Account(profile.getProfile(type).getAccount(userID)) ;
         ModelAndView modelandview = new ModelAndView();
-
-        if (type.equals("teacher")) {
-            acc = teacherProfile.getAccount(userID);
-        } else if (type.equals("student")) {
-            acc = studentProfile.getAccount(userID);
-        }
-
         if ( (!type.equals("teacher") && !type.equals("student")) || (acc == null)){
             modelandview.setViewName("404");
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
@@ -200,20 +164,13 @@ public class HomeController {
     @RequestMapping(value = "/showCourses/{courses}/{type}/{userID}", method = RequestMethod.GET)
     public @ResponseBody
     ModelAndView coursesView(@PathVariable("type") String type, @PathVariable("userID") int userID,@PathVariable("courses") String coursetype){
-        Account acc = new Account();
+        Account acc = new Account(profile.getProfile(type).getAccount(userID));
         ModelAndView modelandview = new ModelAndView();
-        if (type.equals("teacher")) {
-            acc = teacherProfile.getAccount(userID);
-        } else if (type.equals("student")) {
-            acc = studentProfile.getAccount(userID);
-        }
-
         ArrayList<Course> courses = new ArrayList<Course>();
         if (coursetype.equals("allCourses"))
             courses = courseService.showAllCourses();
         else if (coursetype.equals("createdCourses"))
             courses = courseService.showTeacherCourses(userID);
-
         if ( (!type.equals("teacher") && !type.equals("student")) || (acc == null) ||(!coursetype.equals("allCourses") &&!coursetype.equals("createdCourses") )){
             modelandview.setViewName("404");
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
@@ -240,8 +197,7 @@ public class HomeController {
     public @ResponseBody
     ModelAndView addGameView(@PathVariable("type") String type,@PathVariable("courseID") int courseID, @PathVariable("userID") int userID){
         ModelAndView modelAndView = new ModelAndView();
-        Account acc = teacherProfile.getAccount(userID);
-
+        Account acc = new Account(profile.getProfile(type).getAccount(userID));
         if ( (!type.equals("teacher") && !type.equals("student")) ||(acc == null)){
             modelAndView.setViewName("404");
             modelAndView.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
@@ -297,14 +253,8 @@ public class HomeController {
     @RequestMapping(value = "/showGames/{type}/{userID}/{courseID}", method = RequestMethod.GET)
     public @ResponseBody
     ModelAndView showGames(@PathVariable("type") String type,@PathVariable("userID") int userID,@PathVariable("courseID") int courseID ){
-        Account acc = new Account();
+        Account acc = new Account(profile.getProfile(type).getAccount(userID));
         ModelAndView modelandview = new ModelAndView();
-        if (type.equals("teacher")) {
-            acc = teacherProfile.getAccount(userID);
-        } else if (type.equals("student")) {
-            acc = studentProfile.getAccount(userID);
-        }
-
         if ( (!type.equals("teacher") && !type.equals("student")) ||(acc == null)){
             modelandview.setViewName("404");
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
@@ -335,13 +285,8 @@ public class HomeController {
     @RequestMapping(value = "/hangMan/{type}/{userID}/{gameID}", method = RequestMethod.GET)
     public @ResponseBody
     ModelAndView hangManView(@PathVariable("type") String type,@PathVariable("userID") int userID,@PathVariable("gameID") int gameID ){
-        Account acc = new Account();
+        Account acc = new Account(profile.getProfile(type).getAccount(userID));
         ModelAndView modelandview = new ModelAndView();
-        if (type.equals("teacher")) {
-            acc = teacherProfile.getAccount(userID);
-        } else if (type.equals("student")) {
-            acc = studentProfile.getAccount(userID);
-        }
         if ( (!type.equals("teacher") && !type.equals("student")) ||(acc == null)){
             modelandview.setViewName("404");
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
