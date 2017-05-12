@@ -17,6 +17,8 @@
     </script>
     <script src="<c:url value="/resources/js/angualr-controllers/app.js" />" type="text/javascript">
     </script>
+    <script src="<c:url value="/resources/js/angualr-controllers/GameController.js" />" type="text/javascript">
+    </script>
     <script src="<c:url value="/resources/js/users.js" />" type="text/javascript">
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,7 +47,7 @@
 
     </style>
 </head>
-<body>
+<body data-ng-app="app" data-ng-controller="GameController">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -63,6 +65,9 @@
 </nav>
 <input type="hidden" class="form-control" id = "type" value="${type}">
 <input type="hidden" class="form-control" id = "user-id" value="${userID}">
+<c:forEach items="${createdCourses}" var="createdCourses">
+    <input type="hidden" name ="myCourses" value ="${createdCourses.ID}">
+</c:forEach>
 <div class="container">
     <div class="row">
         <c:forEach items="${true_falses}" var="tf">
@@ -94,10 +99,22 @@
                                 <input type="radio" class="form-check-input" id="${tf.gameID}.F" onclick="uncheck1('${tf.gameID}.T')" value="false">
                                 <label><p style="display: inline;"> False </p></label>
                             </div>
-                            <center>
+                            <center id="${tf.gameID}tfCenter">
                                 <input type="hidden" value="${tf.answer}" id="${tf.gameID}.ans">
                                 <input type="button" value="Submit" class="btn btn-danger" onclick="checkans('${tf.gameID}')">
                             </center>
+                            <script>
+                                var userType = '${type}';
+                                var myCourses = document.getElementsByName("myCourses");
+                                if (userType == "teacher"){
+                                    for (var i = 0 ; i < myCourses.length ; i++){
+                                        if(myCourses[i].value == ${tf.courseID}){
+                                            $("#${tf.gameID}tfCenter").append('<input type="button" value="Delete Game" class="btn btn-danger" data-ng-click ="deleteTFGame(${tf.gameID})" >');
+                                            break;
+                                        }
+                                    }
+                                }
+                            </script>
                             <script>
                                 function uncheck(input) {
                                     var check = document.getElementById(input);
@@ -193,10 +210,24 @@
                     </div>
                 </div>
             </div>
-            <center>
+            <center id="${mcq.gameID}mcqCenter">
                 <input type="hidden" value="${mcq.answer}" id="${mcq.answer}.res">
                 <input type="button" value="Submit" class="btn btn-danger" onclick="checkMCQans(${mcq.gameID})">
             </center>
+            <script>
+                var userType = '${type}';
+                var myCourses = document.getElementsByName("myCourses");
+                if (userType == "teacher"){
+                    for (var i = 0 ; i < myCourses.length ; i++){
+                        if(myCourses[i].value == ${mcq.courseID}){
+                            console.log(${mcq.courseID});
+
+                            $("#${mcq.gameID}mcqCenter").append('<input type="button" value="Delete Game" class="btn btn-danger" data-ng-click ="deleteMCQGame(${mcq.gameID})" >');
+                            break;
+                        }
+                    }
+                }
+            </script>
             <script>
                 function checkMCQans(input) {
                     var element = input +'.MCQans';
@@ -231,11 +262,25 @@
                                 <input type="text" id ="HangMan-Question" value="${hangman.question}" class="form-control" placeholder="Enter question"
                                        readonly>
                                 <br>
-                                <center>
+                                <center id="${hangman.gameID}hangmanCenter">
                                     <a type="button" href="http://localhost:8080/Learn-For-Fun/hangMan/${type}/${userID}/${hangman.gameID}" class="btn btn-danger">
                                         Play Game
                                     </a>
                                 </center>
+                                <script>
+                                    var userType = '${type}';
+                                    var myCourses = document.getElementsByName("myCourses");
+                                    if (userType == "teacher"){
+                                        for (var i = 0 ; i < myCourses.length ; i++){
+                                            if(myCourses[i].value == ${hangman.courseID}){
+                                                console.log(${hangman.courseID});
+
+                                                $("#${hangman.gameID}hangmanCenter").append('<input type="button" value="Delete Game" class="btn btn-danger" data-ng-click ="deleteHangMan(${hangman.gameID})" >');
+                                                break;
+                                            }
+                                        }
+                                    }
+                                </script>
                             </div>
                         </form>
                     </div>

@@ -183,7 +183,6 @@ header img {
     margin-top: 200px;
     margin-left: 240px;
     margin-bottom: 20px;
-    cursor: pointer;
 
 }
 
@@ -264,7 +263,5 @@ header img {
 {
     opacity: .50;
 
-    -webkit-pointer-events: none;
-    -moz-pointer-events: none;
     pointer-events: none;
 }

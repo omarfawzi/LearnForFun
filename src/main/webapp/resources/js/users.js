@@ -51,9 +51,17 @@ window.addEventListener('load', function (){
                 if (!flag){
                     var Ninput = document.createElement("button");
                     Ninput.addEventListener("click", function(){
-                        angular.element(document.getElementById('main')).scope().registerCourse(userID,$(this).attr("value"));
-                        $(this).hide();
+                        var inner = document.getElementById($(this).attr("id")).innerHTML;
+                        if (inner == "Register"){
+                            angular.element(document.getElementById('main')).scope().registerCourse(userID,$(this).attr("value"));
+                            document.getElementById($(this).attr("id")).innerHTML = "Un-Register";
+                        }
+                        else {
+                            angular.element(document.getElementById('main')).scope().unregisterCourse(userID,$(this).attr("value"));
+                            document.getElementById($(this).attr("id")).innerHTML = "Register";
+                        }
                     });
+                    Ninput.id = coursesID[i].value + "id";
                     Ninput.className = "btn btn-danger";
                     Ninput.innerHTML = "Register";
                     Ninput.value=coursesID[i].value;
@@ -62,11 +70,19 @@ window.addEventListener('load', function (){
                 else {
                     var Ninput = document.createElement("button");
                     Ninput.addEventListener("click", function(){
-                        angular.element(document.getElementById('main')).scope().unregisterCourse(userID,$(this).attr("value"));
-                        $(this).hide();
+                        var inner = document.getElementById($(this).attr("id")).innerHTML;
+                        if (inner == "Register"){
+                            angular.element(document.getElementById('main')).scope().registerCourse(userID,$(this).attr("value"));
+                            document.getElementById($(this).attr("id")).innerHTML = "Un-Register";
+                        }
+                        else {
+                            angular.element(document.getElementById('main')).scope().unregisterCourse(userID,$(this).attr("value"));
+                            document.getElementById($(this).attr("id")).innerHTML = "Register";
+                        }
                     });
+                    Ninput.id = coursesID[i].value + "id";
                     Ninput.className = "btn btn-danger";
-                    Ninput.innerHTML = "UN-Register";
+                    Ninput.innerHTML = "Un-Register";
                     Ninput.value=coursesID[i].value;
                     div[i].appendChild(Ninput);
                 }

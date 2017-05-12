@@ -3,6 +3,7 @@ learnforfun\mvc\Services\MCQService.class
 learnforfun\mvc\DAOImp\UserDAOImpl.class
 learnforfun\mvc\Services\CourseService.class
 learnforfun\mvc\DAO\CourseDAO.class
+learnforfun\mvc\DAO\NotificationDAO.class
 learnforfun\mvc\DAOImp\TeacherDAOImpl.class
 learnforfun\mvc\Models\Education.class
 learnforfun\mvc\Services\HangManService.class
@@ -22,6 +23,7 @@ learnforfun\mvc\Services\StudentValidation.class
 learnforfun\mvc\DAOImp\True_FalseDAOImpl.class
 learnforfun\mvc\DAO\UserDAO.class
 learnforfun\mvc\DAOImp\CourseDAOImpl.class
+learnforfun\mvc\DAOImp\NotificationDAOImpl.class
 learnforfun\mvc\DAO\HangManDAO.class
 learnforfun\mvc\DAOImp\HangManDAOImpl.class
 learnforfun\mvc\DAO\AccountDAO.class

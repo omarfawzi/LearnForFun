@@ -23,4 +23,8 @@ public interface CourseDAO
 	public ArrayList<Integer> registeredCourses(int userID);
 
 	public boolean unregister(int courseID,int userID);
+
+	public ArrayList<Integer> getRegisteredUsers(int courseID);
+
+	public Integer getCourseowner(int courseID);
 }

@@ -1,5 +1,9 @@
 package learnforfun.mvc.Controllers;
+import learnforfun.mvc.DAO.AccountDAO;
+import learnforfun.mvc.DAO.NotificationDAO;
 import learnforfun.mvc.DAO.UserDAO;
+import learnforfun.mvc.DAOImp.AccountDAOImpl;
+import learnforfun.mvc.DAOImp.NotificationDAOImpl;
 import learnforfun.mvc.DAOImp.UserDAOImpl;
 import learnforfun.mvc.Models.*;
 import learnforfun.mvc.Services.*;
@@ -13,6 +17,7 @@ import java.util.ArrayList;
 @EnableWebMvc
 
 public class HomeController {
+    private AccountDAO accountDAO = new AccountDAOImpl();
     private ValidationFactory validation = new ValidationFactory();
     private ProfileFactory profile = new ProfileFactory();
     private CourseService courseService = new CourseService();
@@ -20,7 +25,7 @@ public class HomeController {
     private MCQService mcqService = new MCQService();
     private HangManService hangManService = new HangManService();
     private UserDAO userDAO = new UserDAOImpl();
-
+    private NotificationDAO notificationDAO = new NotificationDAOImpl();
     @RequestMapping("/")
     public @ResponseBody
     ModelAndView index() {
@@ -173,6 +178,24 @@ public class HomeController {
         return courseService.unregisterCourse(course);
     }
 
+    @RequestMapping(value = "/deleteTF/{gameID}", method = RequestMethod.POST)
+    public @ResponseBody
+    void deleteTF(@PathVariable("gameID") int gameID){
+        tfService.deleteGame(gameID);
+    }
+
+    @RequestMapping(value = "/deleteMCQ/{gameID}", method = RequestMethod.POST)
+    public @ResponseBody
+    void deleteMCQ(@PathVariable("gameID") int gameID){
+        mcqService.deleteGame(gameID);
+    }
+
+    @RequestMapping(value = "/deleteHangMan/{gameID}", method = RequestMethod.POST)
+    public @ResponseBody
+    void deleteHangMan(@PathVariable("gameID") int gameID){
+        hangManService.deleteGame(gameID);
+    }
+
 
     @RequestMapping(value = "/showCourses/{courses}/{type}/{userID}", method = RequestMethod.GET)
     public @ResponseBody
@@ -237,9 +260,18 @@ public class HomeController {
     @RequestMapping(value = "/addGames/{courseID}/{gameName}/{question}/{answer}", method = RequestMethod.POST)
     public @ResponseBody
     Boolean addTFGame(@ModelAttribute True_False tf){
-            if (tfService.getGameID(tf.getGameName()) == -1) {
-                tfService.addGame(tf);
-                return true;
+
+        if (tfService.getGameID(tf.getGameName()) == -1) {
+            ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(tf.getCourseID());
+            ArrayList<String> userNames = new ArrayList<String>();
+            String notifizer = accountDAO.get(courseService.getCourseowner(tf.getCourseID())).getUserName();
+            for (int i = 0  ; i < registeredUsers.size() ; i++)
+                userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
+            for (int i = 0 ; i < userNames.size() ; i++)
+                notificationDAO.insert(userNames.get(i),notifizer);
+
+            tfService.addGame(tf);
+            return true;
             }
         return false;
     }
@@ -248,6 +280,13 @@ public class HomeController {
     public @ResponseBody
     Boolean addMCQGame(@ModelAttribute MultipleChoice mcq){
         if (mcqService.getGameID(mcq.getGameName()) == -1) {
+            ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(mcq.getCourseID());
+            ArrayList<String> userNames = new ArrayList<String>();
+            String notifizer = accountDAO.get(courseService.getCourseowner(mcq.getCourseID())).getUserName();
+            for (int i = 0  ; i < registeredUsers.size() ; i++)
+                userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
+            for (int i = 0 ; i < userNames.size() ; i++)
+                notificationDAO.insert(userNames.get(i),notifizer);
             mcqService.addGame(mcq);
             return true;
         }
@@ -258,6 +297,13 @@ public class HomeController {
     public @ResponseBody
     Boolean addHangman(@ModelAttribute HangMan hangMan){
         if (hangManService.getGameID(hangMan.getGameName()) == -1) {
+            ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(hangMan.getCourseID());
+            ArrayList<String> userNames = new ArrayList<String>();
+            String notifizer = accountDAO.get(courseService.getCourseowner(hangMan.getCourseID())).getUserName();
+            for (int i = 0  ; i < registeredUsers.size() ; i++)
+                userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
+            for (int i = 0 ; i < userNames.size() ; i++)
+                notificationDAO.insert(userNames.get(i),notifizer);
             hangManService.addGame(hangMan);
             return true;
         }
@@ -268,6 +314,7 @@ public class HomeController {
     public @ResponseBody
     ModelAndView showGames(@PathVariable("type") String type,@PathVariable("userID") int userID,@PathVariable("courseID") int courseID ){
         Account acc = new Account(profile.getProfile(type).getAccount(userID));
+        ArrayList<Course> courses = courseService.showTeacherCourses(userID);
         ModelAndView modelandview = new ModelAndView();
         if ( (!type.equals("teacher") && !type.equals("student")) ||(acc == null)){
             modelandview.setViewName("404");
@@ -291,6 +338,7 @@ public class HomeController {
             modelandview.addObject("multipleChoices", multipleChoices);
             modelandview.addObject("hangMen", hangMen);
             modelandview.addObject("account", acc);
+            modelandview.addObject("createdCourses",courses);
             return modelandview;
 
         }

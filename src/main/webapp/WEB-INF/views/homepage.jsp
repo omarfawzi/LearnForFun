@@ -18,7 +18,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <style>
         body {
             background-image: url("<c:url value="/resources/img/img4.jpg" />");
@@ -52,6 +51,17 @@
         <ul class="nav navbar-nav" id="nav-bar">
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <li>
+                <a data-toggle="dropdown" style="cursor: pointer;">
+                    <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                    <span class="badge">4</span>
+                </a>
+                    <ul class="dropdown-menu" style="background-color: transparent; font-style: italic; width: 300px; box-shadow: 0px 1px 10px 1px black;cursor:default;">
+                        <br>
+                        <p> &nbsp; User OmarFawzi published new game</p>
+                        <hr>
+                    </ul>
+            </li>
             <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
             <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
         </ul>

@@ -200,4 +200,39 @@ public class CourseDAOImpl implements CourseDAO
 		}
 		return false;
     }
+
+	@Override
+	public ArrayList<Integer> getRegisteredUsers(int courseID) {
+		ArrayList<Integer> temp = new ArrayList<Integer>();
+    	try {
+			pstmt = con.prepareStatement("SELECT * FROM USER_HISTORY WHERE COURSE_ID = ?");
+			pstmt.setInt(1,courseID);
+			ResultSet rs  = pstmt.executeQuery();
+			while (rs.next())
+			{
+				temp.add(rs.getInt("USER_ID"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+
+	@Override
+	public Integer getCourseowner(int courseID) {
+		int ret = 0 ;
+		try {
+			pstmt = con.prepareStatement("SELECT UID FROM COURSE WHERE CID=?");
+			pstmt.setInt(1,courseID);
+			ResultSet rs  = pstmt.executeQuery();
+			while (rs.next()){
+				ret = rs.getInt("UID");
+				break;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return ret;
+	}
 }

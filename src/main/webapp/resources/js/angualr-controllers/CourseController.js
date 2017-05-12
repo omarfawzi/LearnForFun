@@ -64,7 +64,7 @@ app.controller('CourseController', ["$scope", "$http", function ($scope, $http) 
         var url = "http://localhost:8080/Learn-For-Fun/unregisterCourse/"+ userID+'/' + courseID ;
         $http.post(url, dat, config).then(function (response) {
             if (response.data == true)
-                alert.innerHTML = "Course UN-Registered Successfully";
+                alert.innerHTML = "Course Un-Registered Successfully";
             else
                 alert.innerHTML ="Error";
         }, function (response) {

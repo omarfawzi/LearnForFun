@@ -90,7 +90,6 @@ app.controller('GameController', ["$scope", "$http", function ($scope, $http) {
                 }
             };
             var url = "http://localhost:8080/Learn-For-Fun/addGames/" + dat.courseID + '/' + dat.gameName + '/' + dat.question + '/' + dat.answer + '/' + dat.hint;
-            console.log(url);
             $http.post(url, dat, config).then(function (response) {
                 if (response.data)
                     alert.innerHTML = "Game Added ";
@@ -100,6 +99,48 @@ app.controller('GameController', ["$scope", "$http", function ($scope, $http) {
                 alert.innerHTML = "Error";
             });
         }
+    };
+    $scope.deleteTFGame = function (gameID) {
+        var config = {
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8;'
+            }
+        };
+        var url = "http://localhost:8080/Learn-For-Fun/deleteTF/"+gameID;
+        $http.post(url, null, config).then(function (response) {
+            window.alert("Game deleted");
+            window.location.reload();
+        }, function (response) {
+            window.alert("Fatal Error");
+        });
+    };
+    $scope.deleteMCQGame = function (gameID) {
+        var config = {
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8;'
+            }
+        };
+        var url = "http://localhost:8080/Learn-For-Fun/deleteMCQ/"+gameID;
+        $http.post(url, null, config).then(function (response) {
+            window.alert("Game deleted");
+            window.location.reload();
+        }, function (response) {
+            window.alert("Fatal Error");
+        });
+    };
+    $scope.deleteHangMan = function (gameID) {
+        var config = {
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8;'
+            }
+        };
+        var url = "http://localhost:8080/Learn-For-Fun/deleteHangMan/"+gameID;
+        $http.post(url, null, config).then(function (response) {
+            window.alert("Game deleted");
+            window.location.reload();
+        }, function (response) {
+            window.alert("Fatal Error");
+        });
     };
 
 }]);

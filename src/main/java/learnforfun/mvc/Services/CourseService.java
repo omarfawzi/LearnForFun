@@ -37,8 +37,16 @@ public class CourseService
         return courseDAO.unregister(course.getID(),course.getUserID());
     }
 
+    public ArrayList<Integer> getRegisteredUsers(int courseID){
+        return courseDAO.getRegisteredUsers(courseID);
+    }
 
     public ArrayList<Integer> getRegisteredCourses(int userID){
         return courseDAO.registeredCourses(userID);
     }
+
+    public Integer getCourseowner(int courseID){
+        return courseDAO.getCourseowner(courseID);
+    }
+
 }

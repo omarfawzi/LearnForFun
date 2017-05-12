@@ -71,13 +71,13 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <div class="panel-group">
+           <div class="panel-group">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
                         <center>
                             <h4 class="panel-title" style="color: black">
                                 <a data-toggle="collapse" href="#collapse1">Sign In</a>
-                            </h4>
+                             </h4>
                         </center>
                     </div>
                         <div id="collapse1" class="panel-collapse collapse">
