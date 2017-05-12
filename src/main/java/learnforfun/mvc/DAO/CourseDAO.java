@@ -17,4 +17,10 @@ public interface CourseDAO
 	public ArrayList<Course> TeacherCourses(int ID);
 	
 	public ArrayList<Course> AllCourses();
+
+	public boolean register(int courseID,int userID);
+
+	public ArrayList<Integer> registeredCourses(int userID);
+
+	public boolean unregister(int courseID,int userID);
 }

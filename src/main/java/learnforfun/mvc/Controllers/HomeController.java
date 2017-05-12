@@ -161,12 +161,26 @@ public class HomeController {
         return -1;
     }
 
+    @RequestMapping(value = "/registerCourse/{userID}/{ID}", method = RequestMethod.POST)
+    public @ResponseBody
+    boolean registerCourse(@ModelAttribute Course course){
+        return courseService.registerCourse(course);
+    }
+
+    @RequestMapping(value = "/unregisterCourse/{userID}/{ID}", method = RequestMethod.POST)
+    public @ResponseBody
+    boolean unregisterCourse(@ModelAttribute Course course){
+        return courseService.unregisterCourse(course);
+    }
+
+
     @RequestMapping(value = "/showCourses/{courses}/{type}/{userID}", method = RequestMethod.GET)
     public @ResponseBody
     ModelAndView coursesView(@PathVariable("type") String type, @PathVariable("userID") int userID,@PathVariable("courses") String coursetype){
         Account acc = new Account(profile.getProfile(type).getAccount(userID));
         ModelAndView modelandview = new ModelAndView();
         ArrayList<Course> courses = new ArrayList<Course>();
+        ArrayList <Integer> registeredCourses = courseService.getRegisteredCourses(userID);
         if (coursetype.equals("allCourses"))
             courses = courseService.showAllCourses();
         else if (coursetype.equals("createdCourses"))
@@ -175,7 +189,6 @@ public class HomeController {
             modelandview.setViewName("404");
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
             return modelandview;
-
         }
         boolean exists = userDAO.exists(acc.getUserName());
         if (!exists){
@@ -188,6 +201,7 @@ public class HomeController {
             modelandview.addObject("userID", userID);
             modelandview.addObject("account", acc);
             modelandview.addObject("courses", courses);
+            modelandview.addObject("registeredCourses",registeredCourses);
             return modelandview;
 
         }

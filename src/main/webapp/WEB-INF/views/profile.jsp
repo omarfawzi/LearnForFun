@@ -62,7 +62,7 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="http://localhost:8080/Learn-For-Fun/profile/${type}/${id}">
+            <a class="navbar-brand" href="http://localhost:8080/Learn-For-Fun/profile/${type}/${userID}">
                 <img src="<c:url value="/resources/img/logo8.png" />" style="margin-top: -16px; height: 50px">
             </a>
         </div>

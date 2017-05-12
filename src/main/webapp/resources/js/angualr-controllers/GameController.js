@@ -100,5 +100,6 @@ app.controller('GameController', ["$scope", "$http", function ($scope, $http) {
                 alert.innerHTML = "Error";
             });
         }
-    }
+    };
+
 }]);

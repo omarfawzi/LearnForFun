@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <!DOCTYPE html>
 <html class="no-js" lang="">
 <head>
@@ -47,7 +46,7 @@
     </style>
 
 </head>
-<body>
+<body data-ng-app="app" data-ng-controller="CourseController">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -69,23 +68,32 @@
 <br>
 <input type="hidden" class="form-control" id = "type" value="${type}">
 <input type="hidden" class="form-control" id = "user-id" value="${userID}">
-<div class="container">
+
+<div class="container" id="try">
     <div class="row">
+<c:forEach items="${registeredCourses}" var="ids">
+    <input type="hidden" name="registeredCourse" value="${ids}">
+</c:forEach>
     <c:forEach items="${courses}" var="course">
         <div class="col-sm-4">
             <div class="panel panel-primary">
                 <div class="panel-body">
                     <div class="form-group">
+                        <div class="alert alert-info alert-dismissable">
+                            <a class="panel-close close" data-dismiss="alert">-</a>
+                            <i class="fa fa-coffee"></i>
+                            <p style="color: black" id="${course.ID}">Waiting for input...</p>
+                        </div>
                         Course Name
-                        <input type="text" class="form-control" id="course-name" name="coursename" placeholder="Enter Course Name" readonly value="${course.name}">
+                        <input type="text" class="form-control" id="course-name" name="coursename"readonly value="${course.name}">
                     </div>
                     <div class="form-group">
                         Course Description
-                        <textarea class="form-control" rows="5" id="course-description" name="courseDescription" placeholder="Description" readonly>${course.description}
+                        <textarea class="form-control" rows="5" id="course-description" name="courseDescription"readonly>${course.description}
                         </textarea>
                     </div>
                 </div>
-                <div class="panel-footer" name="div">
+                <div class="panel-footer" name="div" data-ng-controller="CourseController" id="main">
                     <a type="button" class="btn btn-primary" href="http://localhost:8080/Learn-For-Fun/showGames/${type}/${userID}/${course.ID}">Show Games</a>
                     <input type="hidden" name="courseID" value="${course.ID}">
                 </div>

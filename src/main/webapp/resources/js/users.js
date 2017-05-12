@@ -4,6 +4,7 @@ window.addEventListener('load', function (){
         var coursesID = document.getElementsByName("courseID");
         var type = document.getElementById('type').value;
         var userID = document.getElementById('user-id').value;
+        var registeredCourses = document.getElementsByName("registeredCourse");
         if (type == "teacher") {
             var li1 = document.createElement("li");
             li1.className = "active";
@@ -32,13 +33,43 @@ window.addEventListener('load', function (){
             nav.appendChild(li4);
 
             for (var i = 0; i < div.length; i++) {
-                var input = document.createElement("a");
-                input.type = "button";
-                input.href = "http://localhost:8080/Learn-For-Fun/addGames/" + type + '/' + coursesID[i].value + '/' + userID;
-                input.className = "btn btn-danger";
-                input.innerHTML = "Add Games";
-                div[i].appendChild(input);
-
+                    var input = document.createElement("a");
+                    input.type = "button";
+                    input.href = "http://localhost:8080/Learn-For-Fun/addGames/" + type + '/' + coursesID[i].value + '/' + userID;
+                    input.className = "btn btn-danger";
+                    input.innerHTML = "Add Games";
+                    div[i].appendChild(input);
+                    var space = document.createTextNode(" ");
+                    div[i].appendChild(space);
+                 var flag = false;
+                 for(var j = 0 ; j < registeredCourses.length ; j++){
+                    if (registeredCourses[j].value == coursesID[i].value){
+                        flag = true;
+                         break;
+                    }
+                }
+                if (!flag){
+                    var Ninput = document.createElement("button");
+                    Ninput.addEventListener("click", function(){
+                        angular.element(document.getElementById('main')).scope().registerCourse(userID,$(this).attr("value"));
+                        $(this).hide();
+                    });
+                    Ninput.className = "btn btn-danger";
+                    Ninput.innerHTML = "Register";
+                    Ninput.value=coursesID[i].value;
+                    div[i].appendChild(Ninput);
+                }
+                else {
+                    var Ninput = document.createElement("button");
+                    Ninput.addEventListener("click", function(){
+                        angular.element(document.getElementById('main')).scope().unregisterCourse(userID,$(this).attr("value"));
+                        $(this).hide();
+                    });
+                    Ninput.className = "btn btn-danger";
+                    Ninput.innerHTML = "UN-Register";
+                    Ninput.value=coursesID[i].value;
+                    div[i].appendChild(Ninput);
+                }
             }
         }
         else {

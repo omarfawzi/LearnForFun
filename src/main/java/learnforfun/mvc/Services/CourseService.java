@@ -28,4 +28,17 @@ public class CourseService
     public ArrayList<Course> showAllCourses(){
         return courseDAO.AllCourses();
     }
+
+    public boolean registerCourse(Course course){
+        return courseDAO.register(course.getID(),course.getUserID());
+    }
+
+    public boolean unregisterCourse(Course course){
+        return courseDAO.unregister(course.getID(),course.getUserID());
+    }
+
+
+    public ArrayList<Integer> getRegisteredCourses(int userID){
+        return courseDAO.registeredCourses(userID);
+    }
 }

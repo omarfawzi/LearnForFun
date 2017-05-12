@@ -142,7 +142,6 @@ public class CourseDAOImpl implements CourseDAO
 			while (rs.next())
 			{
 				course = new Course();
-				
 				course.setName(rs.getString("NAME"));
 				course.setDescription(rs.getString("DESCRIPTION"));
 				course.setID(rs.getInt("CID"));
@@ -155,5 +154,50 @@ public class CourseDAOImpl implements CourseDAO
 		}
     	
     	return courses;
+    }
+
+	@Override
+	public boolean register(int courseID, int userID) {
+		try {
+			pstmt = con.prepareStatement("INSERT INTO USER_HISTORY (USER_ID, COURSE_ID) VALUES(?, ?)");
+			pstmt.setInt(1,userID);
+			pstmt.setInt(2,courseID);
+			pstmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public ArrayList<Integer> registeredCourses(int userID) {
+    	ArrayList<Integer> temp = new ArrayList<Integer>();
+		try {
+			pstmt = con.prepareStatement("SELECT * FROM USER_HISTORY WHERE USER_ID = ?");
+			pstmt.setInt(1,userID);
+			ResultSet rs  = pstmt.executeQuery();
+			while (rs.next())
+			{
+				temp.add(rs.getInt("COURSE_ID"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return temp;
+	}
+
+	@Override
+	public boolean unregister(int courseID, int userID) {
+		try {
+			pstmt = con.prepareStatement("DELETE FROM USER_HISTORY where USER_ID = ? and COURSE_ID = ?");
+			pstmt.setInt(1,userID);
+			pstmt.setInt(2,courseID);
+			pstmt.executeUpdate();
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
     }
 }
