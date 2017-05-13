@@ -3,3 +3,14 @@
 0:0:0:0:0:0:0:1 - - [14/May/2017:00:06:36 +0300] "GET /Learn-For-Fun HTTP/1.1" 302 - http-bio-8080-exec-3 0
 0:0:0:0:0:0:0:1 - - [14/May/2017:00:06:36 +0300] "GET /Learn-For-Fun/ HTTP/1.1" 200 1658 http-bio-8080-exec-7 13
 0:0:0:0:0:0:0:1 - - [14/May/2017:00:06:43 +0300] "POST /Learn-For-Fun/sign/student/ HTTP/1.1" 200 9178 http-bio-8080-exec-8 424
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:37:29 +0300] "GET /Learn-For-Fun HTTP/1.1" 302 - http-bio-8080-exec-6 0
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:37:40 +0300] "GET /Learn-For-Fun/ HTTP/1.1" 200 1658 http-bio-8080-exec-7 11599
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:37:55 +0300] "POST /Learn-For-Fun/sign/student/ HTTP/1.1" 200 9178 http-bio-8080-exec-9 402
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:38:12 +0300] "POST /Learn-For-Fun/sign/student/omarfawzi96@gmail.com/123 HTTP/1.1" 200 12 http-bio-8080-exec-5 1758
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:38:19 +0300] "GET /Learn-For-Fun/sign/teacher/ HTTP/1.1" 200 9178 http-bio-8080-exec-5 15
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:38:30 +0300] "POST /Learn-For-Fun/sign/teacher/omarfawzi96@gmail.com/123 HTTP/1.1" 200 11 http-bio-8080-exec-5 272
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:38:35 +0300] "GET /Learn-For-Fun/profile/teacher/1 HTTP/1.1" 200 6355 http-bio-8080-exec-5 5014
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:38:35 +0300] "GET /Learn-For-Fun/resources/js/users.js HTTP/1.1" 200 5684 http-bio-8080-exec-5 51
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:38:37 +0300] "GET /Learn-For-Fun/resources/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028 http-bio-8080-exec-5 206
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:39:49 +0300] "GET /Learn-For-Fun/showCourses/allCourses/teacher/1 HTTP/1.1" 200 7868 http-bio-8080-exec-7 1116
+0:0:0:0:0:0:0:1 - - [14/May/2017:00:39:49 +0300] "GET /Learn-For-Fun/resources/js/angualr-controllers/CourseController.js HTTP/1.1" 200 3066 http-bio-8080-exec-7 38
