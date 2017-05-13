@@ -16,6 +16,6 @@ public class NotificationService {
         notificationDAO.insert(notification);
     }
     public ArrayList<Notifications> getNotifications(String notifiedUser) {
-        notificationDAO.getNotifications(notifiedUser);
+        return notificationDAO.getNotifications(notifiedUser);
     }
 }

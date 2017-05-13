@@ -1,10 +1,10 @@
 package learnforfun.mvc.Controllers;
 import learnforfun.mvc.DAO.AccountDAO;
 import learnforfun.mvc.DAO.NotificationDAO;
-import learnforfun.mvc.DAO.UserDAO;
+import learnforfun.mvc.DAO.UserHistoryDAO;
 import learnforfun.mvc.DAOImp.AccountDAOImpl;
 import learnforfun.mvc.DAOImp.NotificationDAOImpl;
-import learnforfun.mvc.DAOImp.UserDAOImpl;
+import learnforfun.mvc.DAOImp.UserHistoryDAOImpl;
 import learnforfun.mvc.Models.*;
 import learnforfun.mvc.Services.*;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 @RestController
@@ -26,8 +25,10 @@ public class HomeController {
     private TFService tfService = new TFService();
     private MCQService mcqService = new MCQService();
     private HangManService hangManService = new HangManService();
-    private UserDAO userDAO = new UserDAOImpl();
+    private UserHistoryDAO userHistoryDAO = new UserHistoryDAOImpl();
     private NotificationDAO notificationDAO = new NotificationDAOImpl();
+    private CommentService commentService = new CommentService();
+
     @RequestMapping("/")
     public @ResponseBody
     ModelAndView index() {
@@ -38,7 +39,7 @@ public class HomeController {
     @RequestMapping("/signout/{username}")
     public @ResponseBody
     ModelAndView signOut(@PathVariable("username") String username) {
-        userDAO.delete(username);
+        userHistoryDAO.delete(username);
         String redirect = "http://localhost:8080/Learn-For-Fun/";
         return new ModelAndView("redirect:"+ redirect);
     }
@@ -74,7 +75,7 @@ public class HomeController {
     Integer SignIn(@ModelAttribute Account object, @PathVariable("type") String type) {
         int ret = validation.getValidation(type).SignIn(object.getMail(),object.getPassword());;
         if (ret >= 0)
-            userDAO.insert(profile.getProfile(type).getAccount(ret).getUserName());
+            userHistoryDAO.insert(profile.getProfile(type).getAccount(ret).getUserName());
         return ret;
     }
 
@@ -90,7 +91,7 @@ public class HomeController {
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun");
             return modelandview;
         }
-        boolean exists = userDAO.exists(acc.getUserName());
+        boolean exists = userHistoryDAO.exists(acc.getUserName());
         if (!exists){
             String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
             return new ModelAndView("redirect:"+ redirect);
@@ -118,7 +119,7 @@ public class HomeController {
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
             return modelandview;
         }
-        boolean exists = userDAO.exists(acc.getUserName());
+        boolean exists = userHistoryDAO.exists(acc.getUserName());
         if (!exists){
             String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
             return new ModelAndView("redirect:"+ redirect);
@@ -154,7 +155,7 @@ public class HomeController {
             return modelandview;
 
         }
-        boolean exists = userDAO.exists(acc.getUserName());
+        boolean exists = userHistoryDAO.exists(acc.getUserName());
         if (!exists){
             String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
             return new ModelAndView("redirect:"+ redirect);
@@ -214,6 +215,23 @@ public class HomeController {
         hangManService.deleteGame(gameID);
     }
 
+    @RequestMapping(value = "/addCommentTF/{userID}/{gameID}/{courseID}/{Comment}", method = RequestMethod.POST)
+    public @ResponseBody
+    void addCommentTF(@ModelAttribute Comment comment){
+        commentService.insert(comment);
+    }
+
+    @RequestMapping(value = "/addCommentMCQ/{userID}/{gameID}/{courseID}/{Comment}", method = RequestMethod.POST)
+    public @ResponseBody
+    void addCommentMCQ(@ModelAttribute Comment comment){
+        commentService.insert(comment);
+    }
+
+    @RequestMapping(value = "/addCommentHangman/{userID}/{gameID}/{courseID}/{Comment}", method = RequestMethod.POST)
+    public @ResponseBody
+    void addCommentHangman(@ModelAttribute Comment comment){
+        commentService.insert(comment);
+    }
 
     @RequestMapping(value = "/showCourses/{courses}/{type}/{userID}", method = RequestMethod.GET)
     public @ResponseBody
@@ -231,7 +249,7 @@ public class HomeController {
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
             return modelandview;
         }
-        boolean exists = userDAO.exists(acc.getUserName());
+        boolean exists = userHistoryDAO.exists(acc.getUserName());
         if (!exists){
             String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
             return new ModelAndView("redirect:"+ redirect);
@@ -264,7 +282,7 @@ public class HomeController {
             return modelAndView;
 
         }
-        boolean exists = userDAO.exists(acc.getUserName());
+        boolean exists = userHistoryDAO.exists(acc.getUserName());
         if (!exists){
             String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
             return new ModelAndView("redirect:"+ redirect);
@@ -350,7 +368,7 @@ public class HomeController {
             return modelandview;
 
         }
-        boolean exists = userDAO.exists(acc.getUserName());
+        boolean exists = userHistoryDAO.exists(acc.getUserName());
         if (!exists){
             String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
             return new ModelAndView("redirect:"+ redirect);
@@ -388,7 +406,7 @@ public class HomeController {
             return modelandview;
 
         }
-        boolean exists = userDAO.exists(acc.getUserName());
+        boolean exists = userHistoryDAO.exists(acc.getUserName());
         if (!exists){
             String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
             return new ModelAndView("redirect:"+ redirect);

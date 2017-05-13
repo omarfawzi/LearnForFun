@@ -9,8 +9,8 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:component-scan base-package="learnforfun.mvc.Controllers"></context:component-scan>
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <context:component-scan base-package="learnforfun.mvc.Controllers"/>
+    <mvc:annotation-driven/>
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
@@ -22,8 +22,11 @@
         <property name="username" value="root"/>
         <property name="password" value="root"/>
     </bean>
+
     <bean id="accountDao" class="learnforfun.mvc.DAOImp.AccountDAOImpl"/>
     <mvc:resources mapping="/resources/**" location="/resources/"
                    cache-period="31556926"/>
     <mvc:default-servlet-handler/>
+
+
 </beans>
