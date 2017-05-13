@@ -12,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 @RestController
 @EnableWebMvc
@@ -81,6 +83,8 @@ public class HomeController {
     ModelAndView homepageView(@PathVariable("type") String type, @PathVariable("userID") int userID){
         ModelAndView modelandview = new ModelAndView();
         Account acc = new Account(profile.getProfile(type).getAccount(userID));
+        String notifiedUser = acc.getUserName();
+
         if ( (!type.equals("teacher") && !type.equals("student")) || (acc == null)){
             modelandview.setViewName("404");
             modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun");
@@ -92,10 +96,15 @@ public class HomeController {
             return new ModelAndView("redirect:"+ redirect);
         }
         else {
+            ArrayList<Pair<String,Integer>> getNotifizers = notificationDAO.getNotification(notifiedUser);
+            Collections.reverse(getNotifizers);
+
             modelandview = new ModelAndView("homepage");
             modelandview.addObject("type", type);
             modelandview.addObject("userID", userID);
             modelandview.addObject("account", acc);
+            modelandview.addObject("notifizers",getNotifizers);
+            modelandview.addObject("number",getNotifizers.size());
             return modelandview;
         }
     }
@@ -116,6 +125,11 @@ public class HomeController {
             return new ModelAndView("redirect:"+ redirect);
         }
         else {
+            String notifiedUser = acc.getUserName();
+            ArrayList<Pair<String,Integer>> getNotifizers = notificationDAO.getNotification(notifiedUser);
+            Collections.reverse(getNotifizers);
+            modelandview.addObject("notifizers",getNotifizers);
+            modelandview.addObject("number",getNotifizers.size());
             modelandview.setViewName("profile");
             modelandview.addObject("type", type);
             modelandview.addObject("userID", userID);
@@ -147,6 +161,11 @@ public class HomeController {
             return new ModelAndView("redirect:"+ redirect);
         }
         else {
+            String notifiedUser = acc.getUserName();
+            ArrayList<Pair<String,Integer>> getNotifizers = notificationDAO.getNotification(notifiedUser);
+            Collections.reverse(getNotifizers);
+            modelandview.addObject("notifizers",getNotifizers);
+            modelandview.addObject("number",getNotifizers.size());
             modelandview.setViewName("createCourse");
             modelandview.addObject("type", type);
             modelandview.addObject("userID", userID);
@@ -219,6 +238,11 @@ public class HomeController {
             return new ModelAndView("redirect:"+ redirect);
         }
         else {
+            String notifiedUser = acc.getUserName();
+            ArrayList<Pair<String,Integer>> getNotifizers = notificationDAO.getNotification(notifiedUser);
+            Collections.reverse(getNotifizers);
+            modelandview.addObject("notifizers",getNotifizers);
+            modelandview.addObject("number",getNotifizers.size());
             modelandview.setViewName("courses");
             modelandview.addObject("type", type);
             modelandview.addObject("userID", userID);
@@ -247,6 +271,11 @@ public class HomeController {
             return new ModelAndView("redirect:"+ redirect);
         }
         else {
+            String notifiedUser = acc.getUserName();
+            ArrayList<Pair<String,Integer>> getNotifizers = notificationDAO.getNotification(notifiedUser);
+            Collections.reverse(getNotifizers);
+            modelAndView.addObject("notifizers",getNotifizers);
+            modelAndView.addObject("number",getNotifizers.size());
             modelAndView.setViewName("addGames");
             modelAndView.addObject("type", type);
             modelAndView.addObject("userID", userID);
@@ -268,7 +297,7 @@ public class HomeController {
             for (int i = 0  ; i < registeredUsers.size() ; i++)
                 userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
             for (int i = 0 ; i < userNames.size() ; i++)
-                notificationDAO.insert(userNames.get(i),notifizer);
+                notificationDAO.insert(userNames.get(i),notifizer,tf.getCourseID());
 
             tfService.addGame(tf);
             return true;
@@ -286,7 +315,7 @@ public class HomeController {
             for (int i = 0  ; i < registeredUsers.size() ; i++)
                 userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
             for (int i = 0 ; i < userNames.size() ; i++)
-                notificationDAO.insert(userNames.get(i),notifizer);
+                notificationDAO.insert(userNames.get(i),notifizer,mcq.getCourseID());
             mcqService.addGame(mcq);
             return true;
         }
@@ -303,7 +332,8 @@ public class HomeController {
             for (int i = 0  ; i < registeredUsers.size() ; i++)
                 userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
             for (int i = 0 ; i < userNames.size() ; i++)
-                notificationDAO.insert(userNames.get(i),notifizer);
+                notificationDAO.insert(userNames.get(i),notifizer,hangMan.getCourseID());
+
             hangManService.addGame(hangMan);
             return true;
         }
@@ -328,6 +358,11 @@ public class HomeController {
             return new ModelAndView("redirect:"+ redirect);
         }
         else {
+            String notifiedUser = acc.getUserName();
+            ArrayList<Pair<String,Integer>> getNotifizers = notificationDAO.getNotification(notifiedUser);
+            Collections.reverse(getNotifizers);
+            modelandview.addObject("notifizers",getNotifizers);
+            modelandview.addObject("number",getNotifizers.size());
             ArrayList<True_False> true_falses = tfService.getCourseGames(courseID);
             ArrayList<MultipleChoice> multipleChoices = mcqService.getCourseGames(courseID);
             ArrayList<HangMan> hangMen = hangManService.getCourseGames(courseID);
@@ -361,6 +396,11 @@ public class HomeController {
             return new ModelAndView("redirect:"+ redirect);
         }
         else {
+            String notifiedUser = acc.getUserName();
+            ArrayList<Pair<String,Integer>> getNotifizers = notificationDAO.getNotification(notifiedUser);
+            Collections.reverse(getNotifizers);
+            modelandview.addObject("notifizers",getNotifizers);
+            modelandview.addObject("number",getNotifizers.size());
             modelandview.setViewName("hangman");
             HangMan hangMan = hangManService.getGame(gameID);
             modelandview.addObject("type", type);

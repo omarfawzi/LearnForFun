@@ -66,6 +66,20 @@
             <li><a href="http://localhost:8080/Learn-For-Fun/showCourses/createdCourses/${type}/${userID}">Created Courses</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn" style="cursor: pointer;">
+                    <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
+                    <span class="badge">${number}</span>
+                </a>
+                <div class="dropdown-content">
+                    <c:forEach items="${notifizers}" var="notifizer">
+                        <a href="http://localhost:8080/Learn-For-Fun/showCourses/allCourses/teacher/${notifizer.second}">
+                            <span class="glyphicon glyphicon-user" style="color: black"></span>
+                                ${notifizer.first} published a new game in a course you are registered in.</a>
+                        <hr>
+                    </c:forEach>
+                </div>
+            </li>
             <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
             <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
         </ul>

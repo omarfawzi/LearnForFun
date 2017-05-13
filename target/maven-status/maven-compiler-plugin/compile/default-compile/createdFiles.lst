@@ -11,6 +11,7 @@ learnforfun\mvc\Models\MultipleChoice.class
 learnforfun\mvc\Models\Student.class
 learnforfun\mvc\DAO\True_FalseDAO.class
 learnforfun\mvc\DAOImp\MultipleChoiceDAOImpl.class
+learnforfun\mvc\Models\Pair.class
 learnforfun\mvc\DAO\PlayDAO.class
 learnforfun\mvc\Models\Course.class
 learnforfun\mvc\Models\Account.class
