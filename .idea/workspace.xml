@@ -5,37 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dba6092a-6e6c-43dc-9698-f55560d08a36" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/learnforfun/mvc/DAO/CommentsDAO.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/learnforfun/mvc/Models/Comment.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/learnforfun/mvc/Models/Notifications.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/CommentsDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Comment.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Notifications.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Pair.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/learnforfun/mvc/Models/Pair.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/learnforfun/mvc/Controllers/HomeController.class" afterPath="$PROJECT_DIR$/target/classes/learnforfun/mvc/Controllers/HomeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/learnforfun/mvc/DAO/NotificationDAO.class" afterPath="$PROJECT_DIR$/target/classes/learnforfun/mvc/DAO/NotificationDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/learnforfun/mvc/DAOImp/NotificationDAOImpl.class" afterPath="$PROJECT_DIR$/target/classes/learnforfun/mvc/DAOImp/NotificationDAOImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/addGames_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/addGames_jsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/courses_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/courses_jsp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/games_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/games_jsp.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/NotificationService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/HomeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/NotificationDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/NotificationDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/NotificationDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/NotificationDAOImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addGames.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addGames.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/courses.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/courses.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createCourse.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createCourse.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/games.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/games.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hangman.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hangman.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/GameController.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/GameController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-05-13" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-05-13" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/addGames_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/addGames_jsp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/courses_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/courses_jsp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/games_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/games_jsp.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,22 +36,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Comment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Comment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="336">
+              <caret line="16" column="71" lean-forward="true" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addGames.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addGames.jsp">
+      <file leaf-file-name="NotificationService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/NotificationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="68" column="118" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="378">
+              <caret line="18" column="55" lean-forward="false" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#443#444#0" expanded="true" />
+                <element signature="e#495#496#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,8 +123,8 @@
       <file leaf-file-name="NotificationDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/NotificationDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="574">
-              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="280">
+              <caret line="46" column="75" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1570#1585#0" expanded="true" />
@@ -208,7 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/ProfileController.js" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/MultipleChoiceDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/MultipleChoice.java" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/TFService.java" />
@@ -259,6 +233,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Comment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/NotificationService.java" />
       </list>
     </option>
   </component>
@@ -1318,15 +1293,16 @@
       <workItem from="1494506350976" duration="4842000" />
       <workItem from="1494512912560" duration="16297000" />
       <workItem from="1494582161360" duration="35297000" />
-      <workItem from="1494675070410" duration="6780000" />
+      <workItem from="1494675070410" duration="6996000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="366781000" />
+    <option name="totallyTimeSpent" value="366997000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1348,7 +1324,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35126236" sideWeight="0.5062959" order="14" side_tool="true" content_ui="tabs" x="0" y="0" width="1914" height="1030" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35126236" sideWeight="0.5062959" order="14" side_tool="true" content_ui="tabs" x="0" y="0" width="1914" height="1030" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1396,13 +1372,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/font-awesome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1808,19 +1777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/NotificationDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1570#1585#0" expanded="true" />
-            <marker date="1494685072984" expanded="true" signature="968:1064" ph="INSERT INTO NOTIFICATIONS... " />
-            <marker date="1494685072984" expanded="true" signature="1645:1696" ph="SELECT * FRO... NOTIFICATIONS" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
@@ -1837,9 +1793,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Comment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="336">
+          <caret line="16" column="71" lean-forward="true" selection-start-line="16" selection-start-column="71" selection-end-line="16" selection-end-column="71" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/NotificationDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="46" column="75" lean-forward="true" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1570#1585#0" expanded="true" />
+            <marker date="1494685072984" expanded="true" signature="968:1064" ph="INSERT INTO NOTIFICATIONS... " />
+            <marker date="1494685072984" expanded="true" signature="1645:1696" ph="SELECT * FRO... NOTIFICATIONS" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/NotificationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="55" lean-forward="false" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
