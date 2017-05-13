@@ -1,6 +1,6 @@
 package learnforfun.mvc.DAO;
 
-import learnforfun.mvc.Models.Pair;
+import learnforfun.mvc.Models.Notifications;
 
 import java.util.ArrayList;
 
@@ -8,6 +8,6 @@ import java.util.ArrayList;
  * Created by Omar on 12-May-17.
  */
 public interface NotificationDAO {
-    public void insert(String notifiedUser, String notifizer , String notificationType, int courseID);
-    public ArrayList <Pair<String,Pair<String,Integer>>> getNotification (String notifiedUser);
+    public void insert(Notifications notification);
+    public ArrayList <Notifications> getNotifications (String notifiedUser);
 }

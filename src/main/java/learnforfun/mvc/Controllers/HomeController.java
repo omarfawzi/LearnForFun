@@ -96,7 +96,7 @@ public class HomeController {
             return new ModelAndView("redirect:"+ redirect);
         }
         else {
-            ArrayList<Pair <String,Pair<String,Integer> > > getNotifizers = notificationDAO.getNotification(notifiedUser);
+            ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
             modelandview = new ModelAndView("homepage");
             modelandview.addObject("type", type);
@@ -125,7 +125,7 @@ public class HomeController {
         }
         else {
             String notifiedUser = acc.getUserName();
-            ArrayList<Pair<String,Pair<String,Integer> > > getNotifizers = notificationDAO.getNotification(notifiedUser);
+            ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
             modelandview.addObject("notifizers",getNotifizers);
             modelandview.addObject("number",getNotifizers.size());
@@ -161,7 +161,7 @@ public class HomeController {
         }
         else {
             String notifiedUser = acc.getUserName();
-            ArrayList<Pair <String,Pair<String,Integer> > > getNotifizers = notificationDAO.getNotification(notifiedUser);
+            ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
             modelandview.addObject("notifizers",getNotifizers);
             modelandview.addObject("number",getNotifizers.size());
@@ -238,7 +238,7 @@ public class HomeController {
         }
         else {
             String notifiedUser = acc.getUserName();
-            ArrayList<Pair <String,Pair<String,Integer> > > getNotifizers = notificationDAO.getNotification(notifiedUser);
+            ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
             modelandview.addObject("notifizers",getNotifizers);
             modelandview.addObject("number",getNotifizers.size());
@@ -271,7 +271,7 @@ public class HomeController {
         }
         else {
             String notifiedUser = acc.getUserName();
-            ArrayList<Pair <String,Pair<String,Integer> > > getNotifizers = notificationDAO.getNotification(notifiedUser);
+            ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
             modelAndView.addObject("notifizers",getNotifizers);
             modelAndView.addObject("number",getNotifizers.size());
@@ -296,7 +296,7 @@ public class HomeController {
             for (int i = 0  ; i < registeredUsers.size() ; i++)
                 userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
             for (int i = 0 ; i < userNames.size() ; i++)
-                notificationDAO.insert(userNames.get(i),notifizer,"True & False Game",tf.getCourseID());
+                notificationDAO.insert(new Notifications("True & False Game",notifizer,userNames.get(i),tf.getCourseID()));
 
             tfService.addGame(tf);
             return true;
@@ -314,7 +314,7 @@ public class HomeController {
             for (int i = 0  ; i < registeredUsers.size() ; i++)
                 userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
             for (int i = 0 ; i < userNames.size() ; i++)
-                notificationDAO.insert(userNames.get(i),notifizer,"MCQ game",mcq.getCourseID());
+                notificationDAO.insert(new Notifications("MCQ Game",notifizer,userNames.get(i),mcq.getCourseID()));
             mcqService.addGame(mcq);
             return true;
         }
@@ -331,7 +331,7 @@ public class HomeController {
             for (int i = 0  ; i < registeredUsers.size() ; i++)
                 userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
             for (int i = 0 ; i < userNames.size() ; i++)
-                notificationDAO.insert(userNames.get(i),notifizer,"HangMan Game",hangMan.getCourseID());
+                notificationDAO.insert(new Notifications("HangMan Game",notifizer,userNames.get(i),hangMan.getCourseID()));
             hangManService.addGame(hangMan);
             return true;
         }
@@ -357,7 +357,7 @@ public class HomeController {
         }
         else {
             String notifiedUser = acc.getUserName();
-            ArrayList<Pair<String,Pair<String,Integer>>> getNotifizers = notificationDAO.getNotification(notifiedUser);
+            ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
             modelandview.addObject("notifizers",getNotifizers);
             modelandview.addObject("number",getNotifizers.size());
@@ -395,7 +395,7 @@ public class HomeController {
         }
         else {
             String notifiedUser = acc.getUserName();
-            ArrayList<Pair<String,Pair<String,Integer>>>  getNotifizers = notificationDAO.getNotification(notifiedUser);
+            ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
             modelandview.addObject("notifizers",getNotifizers);
             modelandview.addObject("number",getNotifizers.size());

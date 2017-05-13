@@ -1,3 +1,4 @@
+learnforfun\mvc\Models\Notifications.class
 learnforfun\mvc\Models\User.class
 learnforfun\mvc\Services\MCQService.class
 learnforfun\mvc\DAOImp\UserDAOImpl.class
@@ -11,7 +12,6 @@ learnforfun\mvc\Models\MultipleChoice.class
 learnforfun\mvc\Models\Student.class
 learnforfun\mvc\DAO\True_FalseDAO.class
 learnforfun\mvc\DAOImp\MultipleChoiceDAOImpl.class
-learnforfun\mvc\Models\Pair.class
 learnforfun\mvc\DAO\PlayDAO.class
 learnforfun\mvc\Models\Course.class
 learnforfun\mvc\Models\Account.class
@@ -22,6 +22,7 @@ learnforfun\mvc\DAO\MultipleChoiceDAO.class
 learnforfun\mvc\DAOImp\StudentDAOImpl.class
 learnforfun\mvc\Services\StudentValidation.class
 learnforfun\mvc\DAOImp\True_FalseDAOImpl.class
+learnforfun\mvc\DAO\CommentsDAO.class
 learnforfun\mvc\DAO\UserDAO.class
 learnforfun\mvc\DAOImp\CourseDAOImpl.class
 learnforfun\mvc\DAOImp\NotificationDAOImpl.class
@@ -34,6 +35,7 @@ learnforfun\mvc\Models\Game.class
 learnforfun\mvc\DAO\TeacherDAO.class
 learnforfun\mvc\Models\True_False.class
 learnforfun\mvc\Models\Teacher.class
+learnforfun\mvc\Models\Comment.class
 learnforfun\mvc\Models\HangMan.class
 learnforfun\mvc\Models\Degree.class
 learnforfun\mvc\Services\Validation.class

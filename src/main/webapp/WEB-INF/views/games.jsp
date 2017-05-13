@@ -65,9 +65,9 @@
                 </a>
                 <div class="dropdown-content">
                     <c:forEach items="${notifizers}" var="notifizer">
-                        <a href="http://localhost:8080/Learn-For-Fun/showCourses/allCourses/teacher/${notifizer.second.second}">
+                        <a href="http://localhost:8080/Learn-For-Fun/showGames/teacher/${userID}/${notifizer.courseID}">
                             <span class="glyphicon glyphicon-user" style="color: black"></span>
-                                ${notifizer.first} published a new ${notifizer.second.first} in a course you are registered in.</a>
+                                ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered in.</a>
                     </c:forEach>
                 </div>
             </li>
@@ -82,36 +82,41 @@
     <input type="hidden" name ="myCourses" value ="${createdCourses.ID}">
 </c:forEach>
 <div class="container">
+    <div class="page-header">
+        <h1>Games</h1>
+    </div>
+</div>
+<div class="container">
     <div class="row">
         <c:forEach items="${true_falses}" var="tf">
-            <div class="col-sm-3">
-                <div class="panel panel-primary">
-                    <div class="panel-body">
-                        <form name="TForm" role="form">
-                            <div class="form-group">
-                                True & False
-                                <hr>
-
-                                <div class="alert alert-info alert-dismissable">
-                                    <a class="panel-close close" data-dismiss="alert">-</a>
-                                    <i class="fa fa-coffee"></i>
-                                    <p style="color: black" id="${tf.gameID}.alert">Answer....</p>
-                                </div>
-                                Game Name :
-                                <input type="text" id="TF-Name" class="form-control" value="${tf.gameName}"
-                                       readonly>
-                                <br>
-                                Question :
-                                <input type="text" id="TF-Question" class="form-control" placeholder="Enter question" value="${tf.question}"
-                                       readonly>
-                                <br>
-                                Choose Answer :
-                                <br>
-                                <input type="radio" class="form-check-input" id="${tf.gameID}.T" onclick="uncheck('${tf.gameID}.F')" value="true">
-                                <label><p style="display: inline;"> True </p></label>
-                                <input type="radio" class="form-check-input" id="${tf.gameID}.F" onclick="uncheck1('${tf.gameID}.T')" value="false">
-                                <label><p style="display: inline;"> False </p></label>
+            <div class="col-sm-5">
+                <div class="panel-group">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <center>
+                                <h4 class="panel-title" style="color: black">
+                                    <a data-toggle="collapse" href="#collapseTF${tf.gameID}">${tf.gameName}</a>
+                                </h4>
+                            </center>
+                        </div>
+                        <div id="collapseTF${tf.gameID}" class="panel-collapse collapse">
+                            <br>
+                            <div class="form-group col-lg-default">
+                            <div class="alert alert-info alert-dismissable">
+                                <a class="panel-close close" data-dismiss="alert">-</a>
+                                <i class="fa fa-coffee"></i>
+                                <p style="color: black" id="${tf.gameID}.alert">Waiting for input....</p>
                             </div>
+                            Question :
+                            <input type="text" id="TF-Question" class="form-control" placeholder="Enter question" value="${tf.question}"
+                                   readonly>
+                            <br>
+                            Choose Answer :
+                            <br>
+                            <input type="radio" class="form-check-input" id="${tf.gameID}.T" onclick="uncheck('${tf.gameID}.F')" value="true">
+                            <label><p style="display: inline;"> True </p></label>
+                            <input type="radio" class="form-check-input" id="${tf.gameID}.F" onclick="uncheck1('${tf.gameID}.T')" value="false">
+                            <label><p style="display: inline;"> False </p></label>
                             <center id="${tf.gameID}tfCenter">
                                 <input type="hidden" value="${tf.answer}" id="${tf.gameID}.ans">
                                 <input type="button" value="Submit" class="btn btn-danger" onclick="checkans('${tf.gameID}')">
@@ -153,127 +158,145 @@
                                     var alert=input+'.alert';
                                     var getAlert=document.getElementById(alert);
                                     if (answer == expectedAnswer)
-                                    getAlert.innerHTML="Right Answer";
+                                        getAlert.innerHTML="Right Answer";
                                     else getAlert.innerHTML="Wrong Answer";
                                 }
                             </script>
-                        </form>
+                                <hr>
+
+                                Comment:
+                                <input type="text" id="tfComment${tf.gameID}" class="form-control" placeholder="Enter Comment"
+                                       >
+                                <br>
+
+                                <center>
+                                <input type="button" value="Comment" class="btn btn-danger" >
+                                </center>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </c:forEach>
         <c:forEach items="${multipleChoices}" var="mcq">
-        <div class="col-sm-3">
-            <div class="panel panel-primary">
-                <div class="panel-body">
-        <form  name="MCQForm" role="form">
-            <div class="form-group">
-                Multiple Choice Question
-                <hr>
-
-                <div class="alert alert-info alert-dismissable">
-                    <a class="panel-close close" data-dismiss="alert">-</a>
-                    <i class="fa fa-coffee"></i>
-                    <p style="color: black" id="${mcq.gameID}.MCQalert">Answer....</p>
-                </div>
-                Game Name :
-                <input type="text" class="form-control" value="${mcq.gameName}" placeholder="Enter Game Name"
-                       readonly>
-                <br>
-                Question :
-                <input type="text" id ="MCQ-Question" value="${mcq.question}" class="form-control" placeholder="Enter question"
-                       readonly>
-                <br>
-                Choices :
-                <br>
-                <div class="row">
-                    <div class="form-group">
-                        <div class="col-sm-6">
-                            1.
-                            <input class="form-control" value="${mcq.choice1}" name="MCQChoices" type="text"
-                                   placeholder="Choice 1" readonly>
-                        </div>
-                        <div class="col-sm-6">
-                            2.
-                            <input class="form-control" value="${mcq.choice2}" name="MCQChoices" type="text"
-                                   placeholder="Choice 2" readonly>
-                        </div>
-                        <br>
-                        <br>
-                        <div class="col-sm-6">
-                            3.
-                            <input class="form-control" value="${mcq.choice3}" name="MCQChoices" type="text"
-                                   placeholder="Choice 3" readonly>
-                        </div>
-                        <div class="col-sm-6">
-                            4.
-                            <input class="form-control" value="${mcq.choice4}" name="MCQChoices" type="text"
-                                   placeholder="Choice 4" readonly>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                Your Answer :
-                <div class="row">
-                    <div class="form-group">
-                        <div class="col-sm-12">
-                            <input class="form-control" id="${mcq.gameID}.MCQans" type="number" min="1" max="4" step="1"
-                                   placeholder="Enter right choice number" required>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <center id="${mcq.gameID}mcqCenter">
-                <input type="hidden" value="${mcq.answer}" id="${mcq.answer}.res">
-                <input type="button" value="Submit" class="btn btn-danger" onclick="checkMCQans(${mcq.gameID})">
-            </center>
-            <script>
-                var userType = '${type}';
-                var myCourses = document.getElementsByName("myCourses");
-                if (userType == "teacher"){
-                    for (var i = 0 ; i < myCourses.length ; i++){
-                        if(myCourses[i].value == ${mcq.courseID}){
-                            console.log(${mcq.courseID});
-
-                            $("#${mcq.gameID}mcqCenter").append('<input type="button" value="Delete Game" class="btn btn-danger" data-ng-click ="deleteMCQGame(${mcq.gameID})" >');
-                            break;
-                        }
-                    }
-                }
-            </script>
-            <script>
-                function checkMCQans(input) {
-                    var element = input +'.MCQans';
-                    var answer=document.getElementById(element).value;
-                    element = input+'.res';
-                    var expected =document.getElementById(element).value;
-                    var alert=input+'.MCQalert';
-                    var getAlert=document.getElementById(alert);
-                    if (answer == expected)
-                        getAlert.innerHTML="Right Answer";
-                    else getAlert.innerHTML="Wrong Answer";
-                }
-            </script>
-        </form>
-        </div>
-            </div>
-        </div>
-        </c:forEach>
-        <c:forEach items="${hangMen}" var="hangman">
             <div class="col-sm-5">
-                <div class="panel panel-primary">
-                    <div class="panel-body">
-                        <form  name="HangManForm" role="form">
-                            <div class="form-group">
-                                Hang Man
-                                <hr>
+                <div class="panel-group">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <center>
+                                <h4 class="panel-title" style="color: black">
+                                    <a data-toggle="collapse" href="#collapseMCQ${mcq.gameID}">${mcq.gameName}</a>
+                                </h4>
+                            </center>
+                        </div>
+                        <div id="collapseMCQ${mcq.gameID}" class="panel-collapse collapse">
+                            <div class="form-group col-lg-default">
+
+                            <div class="alert alert-info alert-dismissable">
+                                    <a class="panel-close close" data-dismiss="alert">-</a>
+                                    <i class="fa fa-coffee"></i>
+                                    <p style="color: black" id="${mcq.gameID}.MCQalert">Answer....</p>
+                                </div>
                                 Game Name :
-                                <input type="text" class="form-control" value="${hangman.gameName}" placeholder="Enter Game Name"
+                                <input type="text" class="form-control" value="${mcq.gameName}" placeholder="Enter Game Name"
                                        readonly>
                                 <br>
                                 Question :
+                                <input type="text" id ="MCQ-Question" value="${mcq.question}" class="form-control" placeholder="Enter question"
+                                       readonly>
+                                <br>
+                                Choices :
+                                <br>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            1.
+                                            <input class="form-control" value="${mcq.choice1}" name="MCQChoices" type="text"
+                                                   placeholder="Choice 1" readonly>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            2.
+                                            <input class="form-control" value="${mcq.choice2}" name="MCQChoices" type="text"
+                                                   placeholder="Choice 2" readonly>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <div class="col-sm-6">
+                                            3.
+                                            <input class="form-control" value="${mcq.choice3}" name="MCQChoices" type="text"
+                                                   placeholder="Choice 3" readonly>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            4.
+                                            <input class="form-control" value="${mcq.choice4}" name="MCQChoices" type="text"
+                                                   placeholder="Choice 4" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                Your Answer :
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <input class="form-control" id="${mcq.gameID}.MCQans" type="number" min="1" max="4" step="1"
+                                                   placeholder="Enter right choice number" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            <center id="${mcq.gameID}mcqCenter">
+                                <input type="hidden" value="${mcq.answer}" id="${mcq.gameID}.res">
+                                <input type="button" value="Submit" class="btn btn-danger" onclick="checkMCQans(${mcq.gameID})">
+                            </center>
+                            <script>
+                                var userType = '${type}';
+                                var myCourses = document.getElementsByName("myCourses");
+                                if (userType == "teacher"){
+                                    for (var i = 0 ; i < myCourses.length ; i++){
+                                        if(myCourses[i].value == ${mcq.courseID}){
+                                            $("#${mcq.gameID}mcqCenter").append('<input type="button" value="Delete Game" class="btn btn-danger" data-ng-click ="deleteMCQGame(${mcq.gameID})" >');
+                                            break;
+                                        }
+                                    }
+                                }
+                            </script>
+                            <script>
+                                function checkMCQans(input) {
+                                    console.log(input);
+                                    var element = input +'.MCQans';
+                                    var answer=document.getElementById(element).value;
+                                    element = input+'.res';
+                                    var expected =document.getElementById(element).value;
+                                    var alert=input+'.MCQalert';
+                                    var getAlert=document.getElementById(alert);
+                                    if (answer == expected)
+                                        getAlert.innerHTML="Right Answer";
+                                    else getAlert.innerHTML="Wrong Answer";
+                                }
+                            </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </c:forEach>
+        <c:forEach items="${hangMen}" var="hangman">
+            <div class="col-sm-5">
+                <div class="panel-group">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <center>
+                                <h4 class="panel-title" style="color: black">
+                                    <a data-toggle="collapse" href="#collapseHangMan${hangman.gameID}">${hangman.gameName}</a>
+                                </h4>
+                            </center>
+                        </div>
+                        <div id="collapseHangMan${hangman.gameID}" class="panel-collapse collapse">
+                            <br>
+                            <div class="form-group col-lg-default">
+                            Question :
                                 <input type="text" id ="HangMan-Question" value="${hangman.question}" class="form-control" placeholder="Enter question"
                                        readonly>
+                            </div>
                                 <br>
                                 <center id="${hangman.gameID}hangmanCenter">
                                     <a type="button" href="http://localhost:8080/Learn-For-Fun/hangMan/${type}/${userID}/${hangman.gameID}" class="btn btn-danger">
@@ -294,13 +317,12 @@
                                         }
                                     }
                                 </script>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </c:forEach>
-</div>
+    </div>
 </div>
 <br>
 <br>

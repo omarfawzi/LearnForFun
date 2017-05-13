@@ -64,10 +64,9 @@
                 </a>
                 <div class="dropdown-content">
                     <c:forEach items="${notifizers}" var="notifizer">
-                        <a href="http://localhost:8080/Learn-For-Fun/showCourses/allCourses/teacher/${notifizer.second.second}">
+                        <a href="http://localhost:8080/Learn-For-Fun/showGames/teacher/${userID}/${notifizer.courseID}">
                             <span class="glyphicon glyphicon-user" style="color: black"></span>
-                                ${notifizer.first} published a new ${notifizer.second.first} in a course you are registered in.</a>
-                        <hr>
+                                ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered in.</a>
                     </c:forEach>
                 </div>
             </li>

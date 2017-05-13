@@ -1,7 +1,7 @@
 package learnforfun.mvc.DAOImp;
 
 import learnforfun.mvc.DAO.NotificationDAO;
-import learnforfun.mvc.Models.Pair;
+import learnforfun.mvc.Models.Notifications;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -30,13 +30,13 @@ public class NotificationDAOImpl implements NotificationDAO {
     }
 
     @Override
-    public void insert(String notifiedUser, String notifizer , String notificationType, int courseID) {
+    public void insert(Notifications notification) {
         try {
             pstmt = con.prepareStatement("INSERT INTO NOTIFICATIONS (NOTIFIED_USER,NOTIFIZER,NOTIFICATION_TYPE,COURSE_ID) VALUES (?,?,?,?)");
-            pstmt.setString(1,notifiedUser);
-            pstmt.setString(2,notifizer);
-            pstmt.setString(3,notificationType);
-            pstmt.setInt(4,courseID);
+            pstmt.setString(1,notification.getNotified());
+            pstmt.setString(2,notification.getNotifizer());
+            pstmt.setString(3,notification.getType());
+            pstmt.setInt(4,notification.getCourseID());
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -44,14 +44,14 @@ public class NotificationDAOImpl implements NotificationDAO {
     }
 
     @Override
-    public ArrayList<Pair <String,Pair<String,Integer> > > getNotification(String notifiedUser) {
-        ArrayList<Pair<String,Pair<String,Integer>>> notifications = new ArrayList<Pair<String, Pair<String, Integer>>>();
+    public ArrayList<Notifications> getNotifications(String notifiedUser) {
+        ArrayList<Notifications> notifications = new ArrayList<Notifications>();
         try {
             pstmt = con.prepareStatement("SELECT * FROM NOTIFICATIONS WHERE NOTIFIED_USER = ?");
             pstmt.setString(1,notifiedUser);
             ResultSet rs  = pstmt.executeQuery();
             while (rs.next()){
-                notifications.add(new Pair<String, Pair<String, Integer>>(rs.getString("NOTIFIZER"),new Pair<String, Integer>(rs.getString("NOTIFICATION_TYPE"),rs.getInt("COURSE_ID"))));
+                notifications.add(new Notifications(rs.getString("NOTIFICATION_TYPE"),rs.getString("NOTIFIZER"),notifiedUser,rs.getInt("COURSE_ID")));
             }
         } catch (SQLException e) {
             e.printStackTrace();

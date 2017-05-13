@@ -142,5 +142,8 @@ app.controller('GameController', ["$scope", "$http", function ($scope, $http) {
             window.alert("Fatal Error");
         });
     };
+    $scope.commentTF = function (userID,gameID,courseID,comment) {
+
+    }
 
 }]);
