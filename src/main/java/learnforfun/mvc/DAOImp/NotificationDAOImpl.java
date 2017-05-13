@@ -30,12 +30,13 @@ public class NotificationDAOImpl implements NotificationDAO {
     }
 
     @Override
-    public void insert(String notifiedUser, String notifizer , int courseID) {
+    public void insert(String notifiedUser, String notifizer , String notificationType, int courseID) {
         try {
-            pstmt = con.prepareStatement("INSERT INTO NOTIFICATIONS (NOTIFIED_USER,NOTIFIZER,COURSE_ID) VALUES (?,?,?)");
+            pstmt = con.prepareStatement("INSERT INTO NOTIFICATIONS (NOTIFIED_USER,NOTIFIZER,NOTIFICATION_TYPE,COURSE_ID) VALUES (?,?,?,?)");
             pstmt.setString(1,notifiedUser);
             pstmt.setString(2,notifizer);
-            pstmt.setInt(3,courseID);
+            pstmt.setString(3,notificationType);
+            pstmt.setInt(4,courseID);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -43,14 +44,14 @@ public class NotificationDAOImpl implements NotificationDAO {
     }
 
     @Override
-    public ArrayList<Pair<String,Integer> > getNotification(String notifiedUser) {
-        ArrayList<Pair<String,Integer>> notifications = new ArrayList<Pair<String,Integer>>();
+    public ArrayList<Pair <String,Pair<String,Integer> > > getNotification(String notifiedUser) {
+        ArrayList<Pair<String,Pair<String,Integer>>> notifications = new ArrayList<Pair<String, Pair<String, Integer>>>();
         try {
             pstmt = con.prepareStatement("SELECT * FROM NOTIFICATIONS WHERE NOTIFIED_USER = ?");
             pstmt.setString(1,notifiedUser);
             ResultSet rs  = pstmt.executeQuery();
             while (rs.next()){
-                notifications.add(new Pair<String, Integer>(rs.getString("NOTIFIZER"),rs.getInt("COURSE_ID")));
+                notifications.add(new Pair<String, Pair<String, Integer>>(rs.getString("NOTIFIZER"),new Pair<String, Integer>(rs.getString("NOTIFICATION_TYPE"),rs.getInt("COURSE_ID"))));
             }
         } catch (SQLException e) {
             e.printStackTrace();
