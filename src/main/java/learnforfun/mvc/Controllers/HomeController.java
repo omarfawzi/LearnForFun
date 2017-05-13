@@ -219,18 +219,30 @@ public class HomeController {
     public @ResponseBody
     void addCommentTF(@ModelAttribute Comment comment){
         commentService.insert(comment);
+        ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(comment.getCourseID());
+        String notifiedUser = accountDAO.get(courseService.getCourseowner(comment.getUserID())).getUserName();
+        String notifizer = accountDAO.get(comment.getUserID()).getUserName();
+        notificationDAO.insert(new Notifications("comment",notifizer,notifiedUser,comment.getCourseID()));
     }
 
     @RequestMapping(value = "/addCommentMCQ/{userID}/{gameID}/{courseID}/{Comment}", method = RequestMethod.POST)
     public @ResponseBody
     void addCommentMCQ(@ModelAttribute Comment comment){
         commentService.insert(comment);
+        ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(comment.getCourseID());
+        String notifiedUser = accountDAO.get(courseService.getCourseowner(comment.getUserID())).getUserName();
+        String notifizer = accountDAO.get(comment.getUserID()).getUserName();
+        notificationDAO.insert(new Notifications("comment",notifizer,notifiedUser,comment.getCourseID()));
     }
 
     @RequestMapping(value = "/addCommentHangman/{userID}/{gameID}/{courseID}/{Comment}", method = RequestMethod.POST)
     public @ResponseBody
     void addCommentHangman(@ModelAttribute Comment comment){
         commentService.insert(comment);
+        ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(comment.getCourseID());
+        String notifiedUser = accountDAO.get(courseService.getCourseowner(comment.getUserID())).getUserName();
+        String notifizer = accountDAO.get(comment.getUserID()).getUserName();
+        notificationDAO.insert(new Notifications("comment",notifizer,notifiedUser,comment.getCourseID()));
     }
 
     @RequestMapping(value = "/showCourses/{courses}/{type}/{userID}", method = RequestMethod.GET)
@@ -380,8 +392,28 @@ public class HomeController {
             modelandview.addObject("notifizers",getNotifizers);
             modelandview.addObject("number",getNotifizers.size());
             ArrayList<True_False> true_falses = tfService.getCourseGames(courseID);
+            ArrayList<Comment> tfComments = new ArrayList<Comment>() , temp = new ArrayList<Comment>();
+            for (int i = 0 ;  i < true_falses.size() ; i++){
+                temp = commentService.getComments(courseID,true_falses.get(i).getGameID());
+                for (int j = 0 ; j < temp.size() ; j++)
+                    tfComments.add(temp.get(j));
+            }
             ArrayList<MultipleChoice> multipleChoices = mcqService.getCourseGames(courseID);
+            ArrayList<Comment> MCQComments = new ArrayList<Comment>() ;
+            temp = new ArrayList<Comment>();
+            for (int i = 0 ;  i < multipleChoices.size() ; i++){
+                temp = commentService.getComments(courseID,multipleChoices.get(i).getGameID());
+                for (int j = 0 ; j < temp.size() ; j++)
+                    MCQComments.add(temp.get(j));
+            }
             ArrayList<HangMan> hangMen = hangManService.getCourseGames(courseID);
+            ArrayList<Comment> HangmanComments = new ArrayList<Comment>() ;
+            temp = new ArrayList<Comment>();
+            for (int i = 0 ;  i < hangMen.size() ; i++){
+                temp = commentService.getComments(courseID,hangMen.get(i).getGameID());
+                for (int j = 0 ; j < temp.size() ; j++)
+                    HangmanComments.add(temp.get(j));
+            }
             modelandview.setViewName("games");
             modelandview.addObject("type", type);
             modelandview.addObject("userID", userID);
@@ -390,6 +422,9 @@ public class HomeController {
             modelandview.addObject("hangMen", hangMen);
             modelandview.addObject("account", acc);
             modelandview.addObject("createdCourses",courses);
+            modelandview.addObject("tfComments",tfComments);
+            modelandview.addObject("MCQComments",MCQComments);
+            modelandview.addObject("HangmanComments",HangmanComments);
             return modelandview;
 
         }

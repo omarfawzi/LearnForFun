@@ -182,6 +182,7 @@ app.controller('GameController', ["$scope", "$http", function ($scope, $http) {
         if (comment!= "") {
             $http.post(url, dat, config).then(function (response) {
                 alert.innerHTML = "Comment added";
+                window.location.reload();
                 place.value ="";
             }, function (response) {
                 alert.innerHTML = "Fatal Error";

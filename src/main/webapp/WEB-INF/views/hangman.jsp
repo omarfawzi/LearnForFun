@@ -76,7 +76,16 @@
                     <c:forEach items="${notifizers}" var="notifizer">
                         <a href="http://localhost:8080/Learn-For-Fun/showGames/teacher/${userID}/${notifizer.courseID}">
                             <span class="glyphicon glyphicon-user" style="color: black"></span>
-                                ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered in.</a>
+                            <c:choose>
+                                <c:when test="${notifizer.type!='comment'}">
+                                    ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered in.
+                                </c:when>
+                                <c:otherwise>
+                                    ${notifizer.notifizer} commented on your game.
+                                </c:otherwise>
+                            </c:choose>
+
+                        </a>
                     </c:forEach>
                 </div>
             </li>

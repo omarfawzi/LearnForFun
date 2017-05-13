@@ -67,7 +67,16 @@
                     <c:forEach items="${notifizers}" var="notifizer">
                         <a href="http://localhost:8080/Learn-For-Fun/showGames/teacher/${userID}/${notifizer.courseID}">
                             <span class="glyphicon glyphicon-user" style="color: black"></span>
-                                ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered in.</a>
+                            <c:choose>
+                                <c:when test="${notifizer.type!='comment'}">
+                                    ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered in.
+                                </c:when>
+                                <c:otherwise>
+                                    ${notifizer.notifizer} commented on your game.
+                                </c:otherwise>
+                            </c:choose>
+
+                        </a>
                     </c:forEach>
                 </div>
             </li>
@@ -162,7 +171,14 @@
                                     else getAlert.innerHTML="Wrong Answer";
                                 }
                             </script>
-                                <hr>
+                                <br>
+                                <c:forEach items="${tfComments}" var="comment">
+                                    <c:if test="${comment.gameID == tf.gameID}">
+                                        <input type="text" class="form-control" value="${comment.comment}"
+                                        readonly>
+                                    </c:if>
+                                </c:forEach>
+                                <br>
                                 Comment:
                                 <input type="text" id="tfComment${tf.gameID}" class="form-control" placeholder="Enter Comment"
                                       >
@@ -170,6 +186,7 @@
                                 <center>
                                 <input type="button" value="Comment" data-ng-click='comment("TF",${userID},${tf.gameID},${tf.courseID})' class="btn btn-danger" >
                                 </center>
+
                             </div>
                         </div>
                     </div>
@@ -270,7 +287,15 @@
                                     else getAlert.innerHTML="Wrong Answer";
                                 }
                             </script>
-                                <hr>
+                                <br>
+                                <c:forEach items="${MCQComments}" var="comment">
+                                    <c:if test="${comment.gameID == mcq.gameID}">
+                                        <input type="text" class="form-control" value="${comment.comment}"
+                                               readonly>
+                                    </c:if>
+                                </c:forEach>
+                                <br>
+
                                 Comment:
                                 <input type="text" id="MCQComment${mcq.gameID}" class="form-control" placeholder="Enter Comment">
                                 <br>
@@ -326,7 +351,15 @@
                                         }
                                     }
                                 </script>
-                            <hr>
+                            <br>
+                            <c:forEach items="${HangmanComments}" var="comment">
+                                <c:if test="${comment.gameID == hangman.gameID}">
+                                    <input type="text" class="form-control" value="${comment.comment}"
+                                           readonly>
+                                </c:if>
+                            </c:forEach>
+                            <br>
+
                             Comment:
                             <input type="text" id="HangmanComment${hangman.gameID}" class="form-control" placeholder="Enter Comment">
                             <br>
