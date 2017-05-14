@@ -81,13 +81,15 @@
                     </c:forEach>
                 </div>
             </li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span
+                    class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span
+                    class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
         </ul>
     </div>
 </nav>
-<input type="hidden" class="form-control" id = "type" value="${type}">
-<input type="hidden" class="form-control" id = "user-id" value="${userID}">
+<input type="hidden" class="form-control" id="type" value="${type}">
+<input type="hidden" class="form-control" id="user-id" value="${userID}">
 <input type="hidden" class="form-control" id="courseID" value="${courseID}">
 <div class="container">
     <div class="page-header">
@@ -102,139 +104,143 @@
                     <center><h4>True Or False</h4></center>
 
                     <div class="alert alert-info alert-dismissable">
-                            <a class="panel-close close" data-dismiss="alert">-</a>
-                            <i class="fa fa-coffee"></i>
-                            <p style="color: black" id="alert-TF">Add Game....</p>
+                        <a class="panel-close close" data-dismiss="alert">-</a>
+                        <i class="fa fa-coffee"></i>
+                        <p style="color: black" id="alert-TF">Add Game....</p>
+                    </div>
+                    <form name="TForm" role="form">
+                        <div class="form-group">
+                            Add Name
+                            <input type="text" id="TF-Name" class="form-control" placeholder="Enter Game Name"
+                                   required>
+                            <br>
+                            Add Question
+                            <input type="text" id="TF-Question" class="form-control" placeholder="Enter question"
+                                   required>
+                            <br>
+                            Add Answer
+                            <br>
+                            <input type="radio" class="form-check-input" name="TFChoices" value="true">
+                            <label><p style="display: inline;"> True </p></label>
+                            <input type="radio" class="form-check-input" name="TFChoices" value="false">
+                            <label><p style="display: inline;"> False </p></label>
                         </div>
-                        <form name="TForm" role="form">
-                            <div class="form-group">
-                                Add Name
-                                <input type="text" id="TF-Name" class="form-control" placeholder="Enter Game Name"
-                                       required>
-                                <br>
-                                Add Question
-                                <input type="text" id="TF-Question" class="form-control" placeholder="Enter question"
-                                       required>
-                                <br>
-                                Add Answer
-                                <br>
-                                <input type="radio" class="form-check-input" name="TFChoices" value="true">
-                                <label><p style="display: inline;"> True </p></label>
-                                <input type="radio" class="form-check-input" name="TFChoices" value="false">
-                                <label><p style="display: inline;"> False </p></label>
-                            </div>
-                            <center>
-                                <input type="button" value="Add Game" class="btn btn-danger" data-ng-click="addTF(TForm.$valid)">
-                            </center>
-                        </form>
+                        <center>
+                            <input type="button" value="Add Game" class="btn btn-danger"
+                                   data-ng-click="addTF(TForm.$valid)">
+                        </center>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="panel panel-primary">
                 <div class="panel-body">
-                        <center><h4>MCQ</h4></center>
-                        <div class="alert alert-info alert-dismissable">
-                            <a class="panel-close close" data-dismiss="alert">-</a>
-                            <i class="fa fa-coffee"></i>
-                            <p style="color: black" id="alert-MCQ">Add Game....</p>
-                        </div>
-                        <form  name="MCQForm" role="form">
-                            <div class="form-group">
-                                Add Name
-                                <input type="text" id="MCQ-Name" class="form-control" placeholder="Enter Game Name"
-                                       required>
-                                <br>
-                                Question 1
-                                <input type="text" id ="MCQ-Question" class="form-control" placeholder="Enter question"
-                                       required>
-                                <br>
-                                Choices
-                                <br>
+                    <center><h4>MCQ</h4></center>
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">-</a>
+                        <i class="fa fa-coffee"></i>
+                        <p style="color: black" id="alert-MCQ">Add Game....</p>
+                    </div>
+                    <form name="MCQForm" role="form">
+                        <div class="form-group">
+                            Add Name
+                            <input type="text" id="MCQ-Name" class="form-control" placeholder="Enter Game Name"
+                                   required>
+                            <br>
+                            Question 1
+                            <input type="text" id="MCQ-Question" class="form-control" placeholder="Enter question"
+                                   required>
+                            <br>
+                            Choices
+                            <br>
 
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-sm-6">
-                                            1.
-                                            <input class="form-control" name="MCQChoices" type="text"
-                                                   placeholder="Choice 1">
-                                        </div>
-                                        <div class="col-sm-6">
-                                            2.
-                                            <input class="form-control" name="MCQChoices" type="text"
-                                                   placeholder="Choice 2">
-                                        </div>
-                                        <br>
-                                        <br>
-                                        <div class="col-sm-6">
-                                            3.
-                                            <input class="form-control" name="MCQChoices" type="text"
-                                                   placeholder="Choice 3" required>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            4.
-                                            <input class="form-control" name="MCQChoices" type="text"
-                                                   placeholder="Choice 4" required>
-                                        </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-sm-6">
+                                        1.
+                                        <input class="form-control" name="MCQChoices" type="text"
+                                               placeholder="Choice 1">
                                     </div>
-                                </div>
-                                <br>
-                                Right Choice number
-                                <div class="row">
-                                    <div class="form-group">
-                                        <div class="col-sm-12">
-                                            <input class="form-control" id="MCQRightChoice" type="number" min="1" max="4" step="1"
-                                                   placeholder="Enter right choice number" required>
-                                        </div>
+                                    <div class="col-sm-6">
+                                        2.
+                                        <input class="form-control" name="MCQChoices" type="text"
+                                               placeholder="Choice 2">
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="col-sm-6">
+                                        3.
+                                        <input class="form-control" name="MCQChoices" type="text"
+                                               placeholder="Choice 3" required>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        4.
+                                        <input class="form-control" name="MCQChoices" type="text"
+                                               placeholder="Choice 4" required>
                                     </div>
                                 </div>
                             </div>
-                            <center>
-                                <input type="button" value="Add Game" class="btn btn-danger" data-ng-click="addMCQ(MCQForm.$valid)">
-                            </center>
-                        </form>
+                            <br>
+                            Right Choice number
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input class="form-control" id="MCQRightChoice" type="number" min="1" max="4"
+                                               step="1"
+                                               placeholder="Enter right choice number" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <center>
+                            <input type="button" value="Add Game" class="btn btn-danger"
+                                   data-ng-click="addMCQ(MCQForm.$valid)">
+                        </center>
+                    </form>
                 </div>
             </div>
-            </div>
+        </div>
         <div class="col-sm-4">
             <div class="panel panel-primary">
                 <div class="panel-body">
                     <center><h4>Hangman</h4></center>
                     <div class="alert alert-info alert-dismissable">
-                            <a class="panel-close close" data-dismiss="alert">-</a>
-                            <i class="fa fa-coffee"></i>
-                            <p style="color: black" id="alert-Hangman">Add Game....</p>
+                        <a class="panel-close close" data-dismiss="alert">-</a>
+                        <i class="fa fa-coffee"></i>
+                        <p style="color: black" id="alert-Hangman">Add Game....</p>
+                    </div>
+                    <form name="HangmanForm" role="form">
+                        <div class="form-group">
+                            Add Name
+                            <input type="text" id="Hangman-Name" class="form-control" placeholder="Enter Game Name"
+                                   required>
+                            <br>
+                            Add Question
+                            <input type="text" id="Hangman-Question" class="form-control" placeholder="Enter question"
+                                   required>
+                            <br>
+                            Add Answer
+                            <br>
+                            <input type="text" id="Hangman-Answer" class="form-control" placeholder="Enter answer"
+                                   required>
+                            <br>
+                            Add Hint
+                            <input type="text" id="Hangman-Hint" class="form-control" placeholder="Enter answer"
+                                   required>
                         </div>
-                        <form name="HangmanForm" role="form">
-                            <div class="form-group">
-                                Add Name
-                                <input type="text" id="Hangman-Name" class="form-control" placeholder="Enter Game Name"
-                                       required>
-                                <br>
-                                Add Question
-                                <input type="text" id="Hangman-Question" class="form-control" placeholder="Enter question"
-                                       required>
-                                <br>
-                                Add Answer
-                                <br>
-                                <input type="text" id="Hangman-Answer" class="form-control" placeholder="Enter answer"
-                                       required>
-                                <br>
-                                Add Hint
-                                <input type="text" id="Hangman-Hint" class="form-control" placeholder="Enter answer"
-                                       required>
-                            </div>
-                            <center>
-                                <input type="button" value="Add Game" class="btn btn-danger" data-ng-click="addHangman(HangmanForm.$valid)">
-                            </center>
-                        </form>
-                </div>
-            </div>
-        </div>
+                        <center>
+                            <input type="button" value="Add Game" class="btn btn-danger"
+                                   data-ng-click="addHangman(HangmanForm.$valid)">
+                        </center>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
 </div>
 
 </body>

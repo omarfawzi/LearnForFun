@@ -4,7 +4,7 @@ package learnforfun.mvc.Models;
  * Created by Omar on 13-May-17.
  */
 public class Comment {
-    private int userID,courseID,gameID;
+    private int userID, courseID, gameID;
     private String Comment;
 
     public Comment(Comment other) {
@@ -14,7 +14,7 @@ public class Comment {
         this.Comment = other.Comment;
     }
 
-    public Comment(int userID,int courseID,int gameID, String Comment){
+    public Comment(int userID, int courseID, int gameID, String Comment) {
         this.userID = userID;
         this.courseID = courseID;
         this.gameID = gameID;

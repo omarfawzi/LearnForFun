@@ -31,6 +31,7 @@
             background-repeat: no-repeat;
             background-size: 1800px;
         }
+
         .navbar, .panel {
             box-shadow: 0px 2px 20px 2px black;
             background: transparent;
@@ -91,8 +92,10 @@
                     </c:forEach>
                 </div>
             </li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span
+                    class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span
+                    class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
         </ul>
     </div>
 </nav>
@@ -115,13 +118,13 @@
             <div class="alert alert-info alert-dismissable">
                 <a class="panel-close close" data-dismiss="alert">-</a>
                 <i class="fa fa-coffee"></i>
-               <p style="color: black" id="alert">Waiting for update....</p>
+                <p style="color: black" id="alert">Waiting for update....</p>
             </div>
             <form class="form-horizontal" role="form" name="updateForm">
                 <div class="form-group">
                     <label class="col-lg-3 control-label">First name:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" id="user-firstname" value="${account.firstName}" >
+                        <input class="form-control" type="text" id="user-firstname" value="${account.firstName}">
                     </div>
                 </div>
                 <div class="form-group">
@@ -151,15 +154,15 @@
                     <label class="col-md-3 control-label">Phone:</label>
                     <div class="col-md-8">
                         <input class="form-control" id="user-phone" type="text" value="${account.phone}">
-                        <input type="hidden" class="form-control" id = "type" value="${type}">
-                        <input type="hidden" class="form-control" id = "user-id" value="${userID}">
+                        <input type="hidden" class="form-control" id="type" value="${type}">
+                        <input type="hidden" class="form-control" id="user-id" value="${userID}">
 
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Birthdate:</label>
                     <div class="col-md-8">
-                    <input type="date" id="user-bdate" class="form-control" name="bdate" value="${account.BDate}">
+                        <input type="date" id="user-bdate" class="form-control" name="bdate" value="${account.BDate}">
                     </div>
                 </div>
                 <div class="form-group">
@@ -171,13 +174,15 @@
                 <div class="form-group">
                     <label class="col-md-3 control-label">Confirm Password:</label>
                     <div class="col-md-8">
-                        <input class="form-control" id="user-confirm_password" type="password" oninput="check(this)" value="${account.password}">
+                        <input class="form-control" id="user-confirm_password" type="password" oninput="check(this)"
+                               value="${account.password}">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
-                        <input type="button" class="btn btn-primary" value="Save Changes" data-ng-click="update(updateForm.$valid)">
+                        <input type="button" class="btn btn-primary" value="Save Changes"
+                               data-ng-click="update(updateForm.$valid)">
                         <span></span>
                     </div>
                 </div>

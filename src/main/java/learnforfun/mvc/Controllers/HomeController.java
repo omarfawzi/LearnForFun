@@ -1,4 +1,5 @@
 package learnforfun.mvc.Controllers;
+
 import learnforfun.mvc.DAO.AccountDAO;
 import learnforfun.mvc.DAO.NotificationDAO;
 import learnforfun.mvc.DAO.UserHistoryDAO;
@@ -41,18 +42,17 @@ public class HomeController {
     ModelAndView signOut(@PathVariable("username") String username) {
         userHistoryDAO.delete(username);
         String redirect = "http://localhost:8080/Learn-For-Fun/";
-        return new ModelAndView("redirect:"+ redirect);
+        return new ModelAndView("redirect:" + redirect);
     }
 
     @RequestMapping("/sign/{type}")
     public @ResponseBody
     ModelAndView accountView(@PathVariable("type") String type) {
         ModelAndView modelandview = new ModelAndView();
-        if (!type.equals("teacher") && !type.equals("student")){
+        if (!type.equals("teacher") && !type.equals("student")) {
             modelandview.setViewName("404");
-            modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun");
-        }
-        else {
+            modelandview.addObject("homepage", "http://localhost:8080/Learn-For-Fun");
+        } else {
             modelandview.setViewName("account");
             modelandview.addObject("type", type);
         }
@@ -62,18 +62,22 @@ public class HomeController {
     @RequestMapping(value = "/sign/{type}/{mail}/{password}/{userName}/{phone}/{firstName}/{lastName}/{bDate}/{gender}", method = RequestMethod.POST)
     public @ResponseBody
     Integer SignUp(@ModelAttribute Account object, @PathVariable("type") String type) {
+        int ret = 0;
         try {
-            return validation.getValidation(type).SignUp(object);
+            ret = validation.getValidation(type).SignUp(object);
+            if (ret >= 0)
+                userHistoryDAO.insert(profile.getProfile(type).getAccount(ret).getUserName());
         } catch (SQLException e) {
             e.printStackTrace();
-        };
-        return 0;
+        }
+        ;
+        return ret;
     }
 
     @RequestMapping(value = "/sign/{type}/{mail}/{password}", method = RequestMethod.POST)
     public @ResponseBody
     Integer SignIn(@ModelAttribute Account object, @PathVariable("type") String type) {
-        int ret = validation.getValidation(type).SignIn(object.getMail(),object.getPassword());;
+        int ret = validation.getValidation(type).SignIn(object.getMail(), object.getPassword());
         if (ret >= 0)
             userHistoryDAO.insert(profile.getProfile(type).getAccount(ret).getUserName());
         return ret;
@@ -81,30 +85,29 @@ public class HomeController {
 
     @RequestMapping(value = "/profile/{type}/{userID}")
     public @ResponseBody
-    ModelAndView homepageView(@PathVariable("type") String type, @PathVariable("userID") int userID){
+    ModelAndView homepageView(@PathVariable("type") String type, @PathVariable("userID") int userID) {
         ModelAndView modelandview = new ModelAndView();
-        Account acc = new Account(profile.getProfile(type).getAccount(userID));
-        String notifiedUser = acc.getUserName();
-
-        if ( (!type.equals("teacher") && !type.equals("student")) || (acc == null)){
+        Account acc = profile.getProfile(type).getAccount(userID);
+        if ((!type.equals("teacher") && !type.equals("student")) || (acc == null)) {
             modelandview.setViewName("404");
-            modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun");
+            modelandview.addObject("homepage", "http://localhost:8080/Learn-For-Fun");
             return modelandview;
         }
+        String notifiedUser = acc.getUserName();
         boolean exists = userHistoryDAO.exists(acc.getUserName());
-        if (!exists){
-            String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
-            return new ModelAndView("redirect:"+ redirect);
-        }
-        else {
+        if (!exists) {
+            System.out.println("ana hna ya 7ywan");
+            String redirect = "http://localhost:8080/Learn-For-Fun/sign/" + type;
+            return new ModelAndView("redirect:" + redirect);
+        } else {
             ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
             modelandview = new ModelAndView("homepage");
             modelandview.addObject("type", type);
             modelandview.addObject("userID", userID);
             modelandview.addObject("account", acc);
-            modelandview.addObject("notifizers",getNotifizers);
-            modelandview.addObject("number",getNotifizers.size());
+            modelandview.addObject("notifizers", getNotifizers);
+            modelandview.addObject("number", getNotifizers.size());
             return modelandview;
         }
     }
@@ -113,23 +116,22 @@ public class HomeController {
     public @ResponseBody
     ModelAndView profileView(@PathVariable("type") String type, @PathVariable("userID") int userID) {
         ModelAndView modelandview = new ModelAndView();
-        Account acc = new Account(profile.getProfile(type).getAccount(userID));
-        if ( (!type.equals("teacher") && !type.equals("student")) || (acc == null)){
+        Account acc = profile.getProfile(type).getAccount(userID);
+        if ((!type.equals("teacher") && !type.equals("student")) || (acc == null)) {
             modelandview.setViewName("404");
-            modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
+            modelandview.addObject("homepage", "http://localhost:8080/Learn-For-Fun/profile/" + type + '/' + userID);
             return modelandview;
         }
         boolean exists = userHistoryDAO.exists(acc.getUserName());
-        if (!exists){
-            String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
-            return new ModelAndView("redirect:"+ redirect);
-        }
-        else {
+        if (!exists) {
+            String redirect = "http://localhost:8080/Learn-For-Fun/sign/" + type;
+            return new ModelAndView("redirect:" + redirect);
+        } else {
             String notifiedUser = acc.getUserName();
             ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
-            modelandview.addObject("notifizers",getNotifizers);
-            modelandview.addObject("number",getNotifizers.size());
+            modelandview.addObject("notifizers", getNotifizers);
+            modelandview.addObject("number", getNotifizers.size());
             modelandview.setViewName("profile");
             modelandview.addObject("type", type);
             modelandview.addObject("userID", userID);
@@ -146,26 +148,25 @@ public class HomeController {
 
     @RequestMapping(value = "/createCourse/{type}/{userID}", method = RequestMethod.GET)
     public @ResponseBody
-    ModelAndView createcourseView(@PathVariable("type") String type, @PathVariable("userID") int userID){
-        Account acc = new Account(profile.getProfile(type).getAccount(userID)) ;
+    ModelAndView createcourseView(@PathVariable("type") String type, @PathVariable("userID") int userID) {
+        Account acc = profile.getProfile(type).getAccount(userID);
         ModelAndView modelandview = new ModelAndView();
-        if ( (!type.equals("teacher") && !type.equals("student")) || (acc == null)){
+        if ((!type.equals("teacher") && !type.equals("student")) || (acc == null)) {
             modelandview.setViewName("404");
-            modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
+            modelandview.addObject("homepage", "http://localhost:8080/Learn-For-Fun/profile/" + type + '/' + userID);
             return modelandview;
 
         }
         boolean exists = userHistoryDAO.exists(acc.getUserName());
-        if (!exists){
-            String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
-            return new ModelAndView("redirect:"+ redirect);
-        }
-        else {
+        if (!exists) {
+            String redirect = "http://localhost:8080/Learn-For-Fun/sign/" + type;
+            return new ModelAndView("redirect:" + redirect);
+        } else {
             String notifiedUser = acc.getUserName();
             ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
-            modelandview.addObject("notifizers",getNotifizers);
-            modelandview.addObject("number",getNotifizers.size());
+            modelandview.addObject("notifizers", getNotifizers);
+            modelandview.addObject("number", getNotifizers.size());
             modelandview.setViewName("createCourse");
             modelandview.addObject("type", type);
             modelandview.addObject("userID", userID);
@@ -177,7 +178,7 @@ public class HomeController {
 
     @RequestMapping(value = "/createCourse/{userID}/{name}/{description}", method = RequestMethod.POST)
     public @ResponseBody
-    int createCourse(@ModelAttribute Course course){
+    int createCourse(@ModelAttribute Course course) {
         if (courseService.getCourseID(course.getName()) == -1) {
             courseService.addCourse(course);
             return courseService.getCourseID(course.getName());
@@ -187,97 +188,96 @@ public class HomeController {
 
     @RequestMapping(value = "/registerCourse/{userID}/{ID}", method = RequestMethod.POST)
     public @ResponseBody
-    boolean registerCourse(@ModelAttribute Course course){
+    boolean registerCourse(@ModelAttribute Course course) {
         return courseService.registerCourse(course);
     }
 
     @RequestMapping(value = "/unregisterCourse/{userID}/{ID}", method = RequestMethod.POST)
     public @ResponseBody
-    boolean unregisterCourse(@ModelAttribute Course course){
+    boolean unregisterCourse(@ModelAttribute Course course) {
         return courseService.unregisterCourse(course);
     }
 
     @RequestMapping(value = "/deleteTF/{gameID}", method = RequestMethod.POST)
     public @ResponseBody
-    void deleteTF(@PathVariable("gameID") int gameID){
+    void deleteTF(@PathVariable("gameID") int gameID) {
         tfService.deleteGame(gameID);
     }
 
     @RequestMapping(value = "/deleteMCQ/{gameID}", method = RequestMethod.POST)
     public @ResponseBody
-    void deleteMCQ(@PathVariable("gameID") int gameID){
+    void deleteMCQ(@PathVariable("gameID") int gameID) {
         mcqService.deleteGame(gameID);
     }
 
     @RequestMapping(value = "/deleteHangMan/{gameID}", method = RequestMethod.POST)
     public @ResponseBody
-    void deleteHangMan(@PathVariable("gameID") int gameID){
+    void deleteHangMan(@PathVariable("gameID") int gameID) {
         hangManService.deleteGame(gameID);
     }
 
     @RequestMapping(value = "/addCommentTF/{userID}/{gameID}/{courseID}/{Comment}", method = RequestMethod.POST)
     public @ResponseBody
-    void addCommentTF(@ModelAttribute Comment comment){
+    void addCommentTF(@ModelAttribute Comment comment) {
         commentService.insert(comment);
         ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(comment.getCourseID());
         String notifiedUser = accountDAO.get(courseService.getCourseowner(comment.getUserID())).getUserName();
         String notifizer = accountDAO.get(comment.getUserID()).getUserName();
-        notificationDAO.insert(new Notifications("comment",notifizer,notifiedUser,comment.getCourseID()));
+        notificationDAO.insert(new Notifications("comment", notifizer, notifiedUser, comment.getCourseID()));
     }
 
     @RequestMapping(value = "/addCommentMCQ/{userID}/{gameID}/{courseID}/{Comment}", method = RequestMethod.POST)
     public @ResponseBody
-    void addCommentMCQ(@ModelAttribute Comment comment){
+    void addCommentMCQ(@ModelAttribute Comment comment) {
         commentService.insert(comment);
         ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(comment.getCourseID());
         String notifiedUser = accountDAO.get(courseService.getCourseowner(comment.getUserID())).getUserName();
         String notifizer = accountDAO.get(comment.getUserID()).getUserName();
-        notificationDAO.insert(new Notifications("comment",notifizer,notifiedUser,comment.getCourseID()));
+        notificationDAO.insert(new Notifications("comment", notifizer, notifiedUser, comment.getCourseID()));
     }
 
     @RequestMapping(value = "/addCommentHangman/{userID}/{gameID}/{courseID}/{Comment}", method = RequestMethod.POST)
     public @ResponseBody
-    void addCommentHangman(@ModelAttribute Comment comment){
+    void addCommentHangman(@ModelAttribute Comment comment) {
         commentService.insert(comment);
         ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(comment.getCourseID());
         String notifiedUser = accountDAO.get(courseService.getCourseowner(comment.getUserID())).getUserName();
         String notifizer = accountDAO.get(comment.getUserID()).getUserName();
-        notificationDAO.insert(new Notifications("comment",notifizer,notifiedUser,comment.getCourseID()));
+        notificationDAO.insert(new Notifications("comment", notifizer, notifiedUser, comment.getCourseID()));
     }
 
     @RequestMapping(value = "/showCourses/{courses}/{type}/{userID}", method = RequestMethod.GET)
     public @ResponseBody
-    ModelAndView coursesView(@PathVariable("type") String type, @PathVariable("userID") int userID,@PathVariable("courses") String coursetype){
-        Account acc = new Account(profile.getProfile(type).getAccount(userID));
+    ModelAndView coursesView(@PathVariable("type") String type, @PathVariable("userID") int userID, @PathVariable("courses") String coursetype) {
+        Account acc = profile.getProfile(type).getAccount(userID);
         ModelAndView modelandview = new ModelAndView();
         ArrayList<Course> courses = new ArrayList<Course>();
-        ArrayList <Integer> registeredCourses = courseService.getRegisteredCourses(userID);
+        ArrayList<Integer> registeredCourses = courseService.getRegisteredCourses(userID);
         if (coursetype.equals("allCourses"))
             courses = courseService.showAllCourses();
         else if (coursetype.equals("createdCourses"))
             courses = courseService.showTeacherCourses(userID);
-        if ( (!type.equals("teacher") && !type.equals("student")) || (acc == null) ||(!coursetype.equals("allCourses") &&!coursetype.equals("createdCourses") )){
+        if ((!type.equals("teacher") && !type.equals("student")) || (acc == null) || (!coursetype.equals("allCourses") && !coursetype.equals("createdCourses"))) {
             modelandview.setViewName("404");
-            modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
+            modelandview.addObject("homepage", "http://localhost:8080/Learn-For-Fun/profile/" + type + '/' + userID);
             return modelandview;
         }
         boolean exists = userHistoryDAO.exists(acc.getUserName());
-        if (!exists){
-            String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
-            return new ModelAndView("redirect:"+ redirect);
-        }
-        else {
+        if (!exists) {
+            String redirect = "http://localhost:8080/Learn-For-Fun/sign/" + type;
+            return new ModelAndView("redirect:" + redirect);
+        } else {
             String notifiedUser = acc.getUserName();
             ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
-            modelandview.addObject("notifizers",getNotifizers);
-            modelandview.addObject("number",getNotifizers.size());
+            modelandview.addObject("notifizers", getNotifizers);
+            modelandview.addObject("number", getNotifizers.size());
             modelandview.setViewName("courses");
             modelandview.addObject("type", type);
             modelandview.addObject("userID", userID);
             modelandview.addObject("account", acc);
             modelandview.addObject("courses", courses);
-            modelandview.addObject("registeredCourses",registeredCourses);
+            modelandview.addObject("registeredCourses", registeredCourses);
             return modelandview;
 
         }
@@ -285,26 +285,25 @@ public class HomeController {
 
     @RequestMapping(value = "/addGames/{type}/{courseID}/{userID}", method = RequestMethod.GET)
     public @ResponseBody
-    ModelAndView addGameView(@PathVariable("type") String type,@PathVariable("courseID") int courseID, @PathVariable("userID") int userID){
+    ModelAndView addGameView(@PathVariable("type") String type, @PathVariable("courseID") int courseID, @PathVariable("userID") int userID) {
         ModelAndView modelAndView = new ModelAndView();
-        Account acc = new Account(profile.getProfile(type).getAccount(userID));
-        if ( (!type.equals("teacher") && !type.equals("student")) ||(acc == null)){
+        Account acc = profile.getProfile(type).getAccount(userID);
+        if ((!type.equals("teacher") && !type.equals("student")) || (acc == null)) {
             modelAndView.setViewName("404");
-            modelAndView.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
+            modelAndView.addObject("homepage", "http://localhost:8080/Learn-For-Fun/profile/" + type + '/' + userID);
             return modelAndView;
 
         }
         boolean exists = userHistoryDAO.exists(acc.getUserName());
-        if (!exists){
-            String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
-            return new ModelAndView("redirect:"+ redirect);
-        }
-        else {
+        if (!exists) {
+            String redirect = "http://localhost:8080/Learn-For-Fun/sign/" + type;
+            return new ModelAndView("redirect:" + redirect);
+        } else {
             String notifiedUser = acc.getUserName();
             ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
-            modelAndView.addObject("notifizers",getNotifizers);
-            modelAndView.addObject("number",getNotifizers.size());
+            modelAndView.addObject("notifizers", getNotifizers);
+            modelAndView.addObject("number", getNotifizers.size());
             modelAndView.setViewName("addGames");
             modelAndView.addObject("type", type);
             modelAndView.addObject("userID", userID);
@@ -317,34 +316,34 @@ public class HomeController {
 
     @RequestMapping(value = "/addGames/{courseID}/{gameName}/{question}/{answer}", method = RequestMethod.POST)
     public @ResponseBody
-    Boolean addTFGame(@ModelAttribute True_False tf){
+    Boolean addTFGame(@ModelAttribute True_False tf) {
 
         if (tfService.getGameID(tf.getGameName()) == -1) {
             ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(tf.getCourseID());
             ArrayList<String> userNames = new ArrayList<String>();
             String notifizer = accountDAO.get(courseService.getCourseowner(tf.getCourseID())).getUserName();
-            for (int i = 0  ; i < registeredUsers.size() ; i++)
+            for (int i = 0; i < registeredUsers.size(); i++)
                 userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
-            for (int i = 0 ; i < userNames.size() ; i++)
-                notificationDAO.insert(new Notifications("True & False Game",notifizer,userNames.get(i),tf.getCourseID()));
+            for (int i = 0; i < userNames.size(); i++)
+                notificationDAO.insert(new Notifications("True & False Game", notifizer, userNames.get(i), tf.getCourseID()));
 
             tfService.addGame(tf);
             return true;
-            }
+        }
         return false;
     }
 
     @RequestMapping(value = "/addGames/{courseID}/{gameName}/{question}/{answer}/{choice1}/{choice2}/{choice3}/{choice4}", method = RequestMethod.POST)
     public @ResponseBody
-    Boolean addMCQGame(@ModelAttribute MultipleChoice mcq){
+    Boolean addMCQGame(@ModelAttribute MultipleChoice mcq) {
         if (mcqService.getGameID(mcq.getGameName()) == -1) {
             ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(mcq.getCourseID());
             ArrayList<String> userNames = new ArrayList<String>();
             String notifizer = accountDAO.get(courseService.getCourseowner(mcq.getCourseID())).getUserName();
-            for (int i = 0  ; i < registeredUsers.size() ; i++)
+            for (int i = 0; i < registeredUsers.size(); i++)
                 userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
-            for (int i = 0 ; i < userNames.size() ; i++)
-                notificationDAO.insert(new Notifications("MCQ Game",notifizer,userNames.get(i),mcq.getCourseID()));
+            for (int i = 0; i < userNames.size(); i++)
+                notificationDAO.insert(new Notifications("MCQ Game", notifizer, userNames.get(i), mcq.getCourseID()));
             mcqService.addGame(mcq);
             return true;
         }
@@ -353,15 +352,15 @@ public class HomeController {
 
     @RequestMapping(value = "/addGames/{courseID}/{gameName}/{question}/{answer}/{hint}", method = RequestMethod.POST)
     public @ResponseBody
-    Boolean addHangman(@ModelAttribute HangMan hangMan){
+    Boolean addHangman(@ModelAttribute HangMan hangMan) {
         if (hangManService.getGameID(hangMan.getGameName()) == -1) {
             ArrayList<Integer> registeredUsers = courseService.getRegisteredUsers(hangMan.getCourseID());
             ArrayList<String> userNames = new ArrayList<String>();
             String notifizer = accountDAO.get(courseService.getCourseowner(hangMan.getCourseID())).getUserName();
-            for (int i = 0  ; i < registeredUsers.size() ; i++)
+            for (int i = 0; i < registeredUsers.size(); i++)
                 userNames.add(accountDAO.get(registeredUsers.get(i)).getUserName());
-            for (int i = 0 ; i < userNames.size() ; i++)
-                notificationDAO.insert(new Notifications("HangMan Game",notifizer,userNames.get(i),hangMan.getCourseID()));
+            for (int i = 0; i < userNames.size(); i++)
+                notificationDAO.insert(new Notifications("HangMan Game", notifizer, userNames.get(i), hangMan.getCourseID()));
             hangManService.addGame(hangMan);
             return true;
         }
@@ -370,48 +369,47 @@ public class HomeController {
 
     @RequestMapping(value = "/showGames/{type}/{userID}/{courseID}", method = RequestMethod.GET)
     public @ResponseBody
-    ModelAndView showGames(@PathVariable("type") String type,@PathVariable("userID") int userID,@PathVariable("courseID") int courseID ){
-        Account acc = new Account(profile.getProfile(type).getAccount(userID));
+    ModelAndView showGames(@PathVariable("type") String type, @PathVariable("userID") int userID, @PathVariable("courseID") int courseID) {
+        Account acc = profile.getProfile(type).getAccount(userID);
         ArrayList<Course> courses = courseService.showTeacherCourses(userID);
         ModelAndView modelandview = new ModelAndView();
-        if ( (!type.equals("teacher") && !type.equals("student")) ||(acc == null)){
+        if ((!type.equals("teacher") && !type.equals("student")) || (acc == null)) {
             modelandview.setViewName("404");
-            modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
+            modelandview.addObject("homepage", "http://localhost:8080/Learn-For-Fun/profile/" + type + '/' + userID);
             return modelandview;
 
         }
         boolean exists = userHistoryDAO.exists(acc.getUserName());
-        if (!exists){
-            String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
-            return new ModelAndView("redirect:"+ redirect);
-        }
-        else {
+        if (!exists) {
+            String redirect = "http://localhost:8080/Learn-For-Fun/sign/" + type;
+            return new ModelAndView("redirect:" + redirect);
+        } else {
             String notifiedUser = acc.getUserName();
             ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
-            modelandview.addObject("notifizers",getNotifizers);
-            modelandview.addObject("number",getNotifizers.size());
+            modelandview.addObject("notifizers", getNotifizers);
+            modelandview.addObject("number", getNotifizers.size());
             ArrayList<True_False> true_falses = tfService.getCourseGames(courseID);
-            ArrayList<Comment> tfComments = new ArrayList<Comment>() , temp = new ArrayList<Comment>();
-            for (int i = 0 ;  i < true_falses.size() ; i++){
-                temp = commentService.getComments(courseID,true_falses.get(i).getGameID());
-                for (int j = 0 ; j < temp.size() ; j++)
+            ArrayList<Comment> tfComments = new ArrayList<Comment>(), temp = new ArrayList<Comment>();
+            for (int i = 0; i < true_falses.size(); i++) {
+                temp = commentService.getComments(courseID, true_falses.get(i).getGameID());
+                for (int j = 0; j < temp.size(); j++)
                     tfComments.add(temp.get(j));
             }
             ArrayList<MultipleChoice> multipleChoices = mcqService.getCourseGames(courseID);
-            ArrayList<Comment> MCQComments = new ArrayList<Comment>() ;
+            ArrayList<Comment> MCQComments = new ArrayList<Comment>();
             temp = new ArrayList<Comment>();
-            for (int i = 0 ;  i < multipleChoices.size() ; i++){
-                temp = commentService.getComments(courseID,multipleChoices.get(i).getGameID());
-                for (int j = 0 ; j < temp.size() ; j++)
+            for (int i = 0; i < multipleChoices.size(); i++) {
+                temp = commentService.getComments(courseID, multipleChoices.get(i).getGameID());
+                for (int j = 0; j < temp.size(); j++)
                     MCQComments.add(temp.get(j));
             }
             ArrayList<HangMan> hangMen = hangManService.getCourseGames(courseID);
-            ArrayList<Comment> HangmanComments = new ArrayList<Comment>() ;
+            ArrayList<Comment> HangmanComments = new ArrayList<Comment>();
             temp = new ArrayList<Comment>();
-            for (int i = 0 ;  i < hangMen.size() ; i++){
-                temp = commentService.getComments(courseID,hangMen.get(i).getGameID());
-                for (int j = 0 ; j < temp.size() ; j++)
+            for (int i = 0; i < hangMen.size(); i++) {
+                temp = commentService.getComments(courseID, hangMen.get(i).getGameID());
+                for (int j = 0; j < temp.size(); j++)
                     HangmanComments.add(temp.get(j));
             }
             modelandview.setViewName("games");
@@ -421,10 +419,10 @@ public class HomeController {
             modelandview.addObject("multipleChoices", multipleChoices);
             modelandview.addObject("hangMen", hangMen);
             modelandview.addObject("account", acc);
-            modelandview.addObject("createdCourses",courses);
-            modelandview.addObject("tfComments",tfComments);
-            modelandview.addObject("MCQComments",MCQComments);
-            modelandview.addObject("HangmanComments",HangmanComments);
+            modelandview.addObject("createdCourses", courses);
+            modelandview.addObject("tfComments", tfComments);
+            modelandview.addObject("MCQComments", MCQComments);
+            modelandview.addObject("HangmanComments", HangmanComments);
             return modelandview;
 
         }
@@ -432,26 +430,25 @@ public class HomeController {
 
     @RequestMapping(value = "/hangMan/{type}/{userID}/{gameID}", method = RequestMethod.GET)
     public @ResponseBody
-    ModelAndView hangManView(@PathVariable("type") String type,@PathVariable("userID") int userID,@PathVariable("gameID") int gameID ){
-        Account acc = new Account(profile.getProfile(type).getAccount(userID));
+    ModelAndView hangManView(@PathVariable("type") String type, @PathVariable("userID") int userID, @PathVariable("gameID") int gameID) {
+        Account acc = profile.getProfile(type).getAccount(userID);
         ModelAndView modelandview = new ModelAndView();
-        if ( (!type.equals("teacher") && !type.equals("student")) ||(acc == null)){
+        if ((!type.equals("teacher") && !type.equals("student")) || (acc == null)) {
             modelandview.setViewName("404");
-            modelandview.addObject("homepage","http://localhost:8080/Learn-For-Fun/profile/"+type+'/'+userID);
+            modelandview.addObject("homepage", "http://localhost:8080/Learn-For-Fun/profile/" + type + '/' + userID);
             return modelandview;
 
         }
         boolean exists = userHistoryDAO.exists(acc.getUserName());
-        if (!exists){
-            String redirect = "http://localhost:8080/Learn-For-Fun/sign/"+type;
-            return new ModelAndView("redirect:"+ redirect);
-        }
-        else {
+        if (!exists) {
+            String redirect = "http://localhost:8080/Learn-For-Fun/sign/" + type;
+            return new ModelAndView("redirect:" + redirect);
+        } else {
             String notifiedUser = acc.getUserName();
             ArrayList<Notifications> getNotifizers = notificationDAO.getNotifications(notifiedUser);
             Collections.reverse(getNotifizers);
-            modelandview.addObject("notifizers",getNotifizers);
-            modelandview.addObject("number",getNotifizers.size());
+            modelandview.addObject("notifizers", getNotifizers);
+            modelandview.addObject("number", getNotifizers.size());
             modelandview.setViewName("hangman");
             HangMan hangMan = hangManService.getGame(gameID);
             modelandview.addObject("type", type);

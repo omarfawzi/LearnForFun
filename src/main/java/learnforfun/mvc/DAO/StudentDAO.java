@@ -12,7 +12,7 @@ public interface StudentDAO {
 
     public int signUpExists(String mail, String username);
 
-    public Boolean mailExists(String mail) ;
+    public Boolean mailExists(String mail);
 
     public int getID(String mail);
 

@@ -4,9 +4,9 @@ import javax.persistence.Entity;
 
 @Entity
 public class Achievement {
-	private int Score;
+    private int Score;
     private int GameID;
-    private String GameName; 
+    private String GameName;
 
     public Achievement() {
         super();
@@ -24,14 +24,14 @@ public class Achievement {
     }
 
     public String getGameName() {
-		return GameName;
-	}
+        return GameName;
+    }
 
-	public void setGameName(String gameName) {
-		GameName = gameName;
-	}
+    public void setGameName(String gameName) {
+        GameName = gameName;
+    }
 
-	public int getScore() {
+    public int getScore() {
         return Score;
     }
 

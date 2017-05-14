@@ -25,11 +25,12 @@ public class UserHistoryDAOImpl implements UserHistoryDAO {
             e.printStackTrace();
         }
     }
+
     @Override
     public void insert(String username) {
         try {
             pstmt = con.prepareStatement("INSERT INTO signed_in_users (USERNAME) VALUES (?)");
-            pstmt.setString(1,username);
+            pstmt.setString(1, username);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -40,7 +41,7 @@ public class UserHistoryDAOImpl implements UserHistoryDAO {
     public void delete(String username) {
         try {
             pstmt = con.prepareStatement("DELETE FROM  SIGNED_IN_USERS WHERE USERNAME = ?");
-            pstmt.setString(1,username);
+            pstmt.setString(1, username);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -53,7 +54,7 @@ public class UserHistoryDAOImpl implements UserHistoryDAO {
     public boolean exists(String username) {
         try {
             pstmt = con.prepareStatement("SELECT * FROM SIGNED_IN_USERS where USERNAME = ?");
-            pstmt.setString(1,username);
+            pstmt.setString(1, username);
             ResultSet rs = pstmt.executeQuery();
             return rs.next();
         } catch (SQLException e) {

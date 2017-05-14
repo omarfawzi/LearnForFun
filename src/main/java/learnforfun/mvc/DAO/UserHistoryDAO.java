@@ -1,7 +1,5 @@
 package learnforfun.mvc.DAO;
 
-import learnforfun.mvc.Models.Course;
-
 /**
  * Created by Omar on 06-May-17.
  */

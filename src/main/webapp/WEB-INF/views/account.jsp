@@ -10,7 +10,7 @@
     <script type="text/javascript" src="<c:url value="/resources/js/angular.min.js" />"></script>
     <script src="<c:url value="/resources/js/bootstrap.min.js" />" type="text/javascript">
     </script>
-   <script src="<c:url value="/resources/js/angualr-controllers/app.js" />" type="text/javascript">
+    <script src="<c:url value="/resources/js/angualr-controllers/app.js" />" type="text/javascript">
     </script>
     <script src="<c:url value="/resources/js/angualr-controllers/AccountController.js" />" type="text/javascript">
     </script>
@@ -32,8 +32,9 @@
             background-image: url("<c:url value="/resources/img/img4.jpg" />");
             background-repeat: no-repeat;
             background-size: 1800px;
-            color:azure;
+            color: azure;
         }
+
         .navbar, .panel, .panel-heading {
             box-shadow: 0px 2px 20px 2px black;
             background: transparent;
@@ -49,6 +50,7 @@
         .navbar li {
             color: #000
         }
+
         .container, .panel-footer {
             background: transparent;
             border-color: transparent;
@@ -71,40 +73,41 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-           <div class="panel-group">
+            <div class="panel-group">
                 <div class="panel panel-warning">
                     <div class="panel-heading">
                         <center>
                             <h4 class="panel-title" style="color: black">
                                 <a data-toggle="collapse" href="#collapse1">Sign In</a>
-                             </h4>
+                            </h4>
                         </center>
                     </div>
-                        <div id="collapse1" class="panel-collapse collapse">
-                            <br>
-                            <div class="alert alert-info alert-dismissable">
-                                <a class="panel-close close" data-dismiss="alert">-</a>
-                                <i class="fa fa-coffee"></i>
-                                <p style="color: black" id="SignIn-alert">Waiting for input....</p>
-                            </div>
-                            <form role="form" name="signInForm">
-                                <div class="form-group">
-                                    <label>Email:</label>
-                                    <input type="email" class="form-control" id="signIn-email" name="email" required>
-                                    <input type="hidden" class="form-control" id = "type" value="${type}">
-                                </div>
-                                <div class="form-group">
-                                    <label>Password:</label>
-                                    <input type="password" class="form-control" id="signIn-password" name="password" required>
-                                </div>
-
-                                <center>
-                                    <button class="btn btn-danger" data-ng-click="signIn(signInForm.$valid)">Submit
-                                    </button>
-                                </center>
-                                <br>
-                            </form>
+                    <div id="collapse1" class="panel-collapse collapse">
+                        <br>
+                        <div class="alert alert-info alert-dismissable">
+                            <a class="panel-close close" data-dismiss="alert">-</a>
+                            <i class="fa fa-coffee"></i>
+                            <p style="color: black" id="SignIn-alert">Waiting for input....</p>
                         </div>
+                        <form role="form" name="signInForm">
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input type="email" class="form-control" id="signIn-email" name="email" required>
+                                <input type="hidden" class="form-control" id="type" value="${type}">
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input type="password" class="form-control" id="signIn-password" name="password"
+                                       required>
+                            </div>
+
+                            <center>
+                                <button class="btn btn-danger" data-ng-click="signIn(signInForm.$valid)">Submit
+                                </button>
+                            </center>
+                            <br>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -125,56 +128,56 @@
                             <i class="fa fa-coffee"></i>
                             <p style="color: black" id="SignUp-alert">Waiting for input....</p>
                         </div>
-                            <form role="form" name="signUpForm">
-                                <div class="form-group">
-                                    <label>First Name:</label>
-                                    <input type="text" class="form-control" id="signUp-firstname" name="firstname"
-                                           required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Last Name:</label>
-                                    <input type="text" class="form-control" id="signUp-lastname" name="lastname"
-                                           required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Username:</label>
-                                    <input type="text" class="form-control" id="signUp-username" name="username"
-                                           required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Email address:</label>
-                                    <input type="email" class="form-control" id="signUp-email" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Password:</label>
-                                    <input type="password" class="form-control" id="signUp-password" name="password"
-                                           required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Confirm Password:</label>
-                                    <input type="password" class="form-control" id="signUp-confirm_password"
-                                           name="confirm_password" oninput="check(this)" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Phone:</label>
-                                    <input type="tel" id="signUp-phone" class="form-control" name="bdate">
-                                </div>
-                                <div class="form-group">
-                                    <label>Gender:</label>
-                                    <select id="signUp-gender" name="gender" class="form-control">
-                                        <option value="male" class="form-control"> male</option>
-                                        <option value="female" class="form-control"> female</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label>Birthdate:</label>
-                                    <input type="date" id="signUp-bdate" class="form-control" name="bdate">
-                                </div>
-                                <center>
-                                    <button class="btn btn-danger" data-ng-click="signUp(signUpForm.$valid)">Submit
-                                    </button>
-                                </center>
-                            </form>
+                        <form role="form" name="signUpForm">
+                            <div class="form-group">
+                                <label>First Name:</label>
+                                <input type="text" class="form-control" id="signUp-firstname" name="firstname"
+                                       required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name:</label>
+                                <input type="text" class="form-control" id="signUp-lastname" name="lastname"
+                                       required>
+                            </div>
+                            <div class="form-group">
+                                <label>Username:</label>
+                                <input type="text" class="form-control" id="signUp-username" name="username"
+                                       required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email address:</label>
+                                <input type="email" class="form-control" id="signUp-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Password:</label>
+                                <input type="password" class="form-control" id="signUp-password" name="password"
+                                       required>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm Password:</label>
+                                <input type="password" class="form-control" id="signUp-confirm_password"
+                                       name="confirm_password" oninput="check(this)" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone:</label>
+                                <input type="tel" id="signUp-phone" class="form-control" name="bdate">
+                            </div>
+                            <div class="form-group">
+                                <label>Gender:</label>
+                                <select id="signUp-gender" name="gender" class="form-control">
+                                    <option value="male" class="form-control"> male</option>
+                                    <option value="female" class="form-control"> female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Birthdate:</label>
+                                <input type="date" id="signUp-bdate" class="form-control" name="bdate">
+                            </div>
+                            <center>
+                                <button class="btn btn-danger" data-ng-click="signUp(signUpForm.$valid)">Submit
+                                </button>
+                            </center>
+                        </form>
                     </div>
                 </div>
             </div>

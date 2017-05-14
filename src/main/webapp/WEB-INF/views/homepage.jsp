@@ -24,6 +24,7 @@
             background-repeat: no-repeat;
             background-size: 1800px;
         }
+
         .navbar, .panel {
             box-shadow: 0px 2px 20px 2px black;
             background: transparent;
@@ -73,8 +74,10 @@
                     </c:forEach>
                 </div>
             </li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span
+                    class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span
+                    class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
         </ul>
     </div>
 </nav>
@@ -82,8 +85,8 @@
 <br>
 <br>
 <br>
-<input type="hidden" class="form-control" id = "type" value="${type}">
-<input type="hidden" class="form-control" id = "user-id" value="${userID}">
+<input type="hidden" class="form-control" id="type" value="${type}">
+<input type="hidden" class="form-control" id="user-id" value="${userID}">
 <div class="container">
     <div class="row">
         <div class="col-sm-4">

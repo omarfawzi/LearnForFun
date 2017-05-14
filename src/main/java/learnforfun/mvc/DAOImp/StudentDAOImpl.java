@@ -11,6 +11,7 @@ public class StudentDAOImpl implements StudentDAO {
     private PreparedStatement pstmt;
     private Connection con;
     private AccountDAO accountDAO = new AccountDAOImpl();
+
     public StudentDAOImpl() {
         String dbdriver = "com.mysql.jdbc.Driver";
         String url = "jdbc:mysql://localhost:3306/learnforfun";
@@ -82,19 +83,19 @@ public class StudentDAOImpl implements StudentDAO {
             return false;
         }
     }
+
     @Override
     public int getID(String mail) {
         try {
             if (!mailExists(mail))
                 return -1;
             pstmt = con.prepareStatement("SELECT * FROM ACCOUNT where MAIL = ?");
-            pstmt.setString(1,mail);
+            pstmt.setString(1, mail);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next())
                 return rs.getInt("UID");
             return -1;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return -1;
         }
@@ -104,13 +105,12 @@ public class StudentDAOImpl implements StudentDAO {
     public Account getAccount(int id) {
         try {
             pstmt = con.prepareStatement("SELECT STUDENT.UID FROM STUDENT, ACCOUNT WHERE STUDENT.UID = ACCOUNT.UID AND STUDENT.UID = ?");
-            pstmt.setInt(1,id);
+            pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next())
                 return accountDAO.get(id);
             return null;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
@@ -118,9 +118,9 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public Boolean updateAccount(Account account) {
-         int id = getID(account.getMail());
-         if (id == -1)
-             return false;
-         return accountDAO.update(id,account);
+        int id = getID(account.getMail());
+        if (id == -1)
+            return false;
+        return accountDAO.update(id, account);
     }
 }

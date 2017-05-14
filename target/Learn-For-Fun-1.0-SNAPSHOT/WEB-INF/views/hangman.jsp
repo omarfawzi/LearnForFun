@@ -35,6 +35,7 @@
             background-size: 1800px;
             color: azure;
         }
+
         .navbar, .panel {
             box-shadow: 0px 2px 20px 2px black;
             background: transparent;
@@ -55,8 +56,8 @@
 
 </head>
 <body>
-<input type="hidden" class="form-control" id = "type" value="${type}">
-<input type="hidden" class="form-control" id = "user-id" value="${userID}">
+<input type="hidden" class="form-control" id="type" value="${type}">
+<input type="hidden" class="form-control" id="user-id" value="${userID}">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -76,26 +77,34 @@
                     <c:forEach items="${notifizers}" var="notifizer">
                         <a href="http://localhost:8080/Learn-For-Fun/showGames/teacher/${userID}/${notifizer.courseID}">
                             <span class="glyphicon glyphicon-user" style="color: black"></span>
-                                ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered in.</a>
+                                ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered
+                            in.</a>
                     </c:forEach>
                 </div>
             </li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span
+                    class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span
+                    class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
         </ul>
     </div>
 </nav>
 <h2>${game.gameName}</h2>
 <div class="acidjs-rating-stars">
     <form>
-        <input type="radio" name="group-1" id="group-1-0" value="5" onclick="getRate(value)" /><label for="group-1-0"></label><!--
-        --><input type="radio" name="group-1" id="group-1-1" value="4" onclick="getRate(value)"  /><label for="group-1-1"></label><!--
-        --><input type="radio" name="group-1" id="group-1-2" value="3" onclick="getRate(value)" /><label for="group-1-2"></label><!--
-        --><input type="radio" name="group-1" id="group-1-3" value="2" onclick="getRate(value)" /><label for="group-1-3"></label><!--
-        --><input type="radio" name="group-1" id="group-1-4"  value="1" onclick="getRate(value)" /><label for="group-1-4"></label>
+        <input type="radio" name="group-1" id="group-1-0" value="5" onclick="getRate(value)"/><label
+            for="group-1-0"></label><!--
+        --><input type="radio" name="group-1" id="group-1-1" value="4" onclick="getRate(value)"/><label
+            for="group-1-1"></label><!--
+        --><input type="radio" name="group-1" id="group-1-2" value="3" onclick="getRate(value)"/><label
+            for="group-1-2"></label><!--
+        --><input type="radio" name="group-1" id="group-1-3" value="2" onclick="getRate(value)"/><label
+            for="group-1-3"></label><!--
+        --><input type="radio" name="group-1" id="group-1-4" value="1" onclick="getRate(value)"/><label
+            for="group-1-4"></label>
     </form>
     <script>
-        function getRate(input){
+        function getRate(input) {
 
         }
     </script>
@@ -108,8 +117,8 @@
 <div class="wrapper">
     <div id="buttons">
     </div>
-    <input type="hidden" id ="answer" value="${game.answer}">
-    <input type="hidden" id ="hangman-hint" value="${game.hint}">
+    <input type="hidden" id="answer" value="${game.answer}">
+    <input type="hidden" id="hangman-hint" value="${game.hint}">
 
     <p>${game.question} ? </p>
     <div id="hold">

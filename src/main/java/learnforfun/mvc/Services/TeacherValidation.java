@@ -20,12 +20,11 @@ public class TeacherValidation implements Validation {
 
     @Override
     public int SignIn(String mail, String pass) {
-        if (teacher.signInExists(mail, pass) == -1){
+        if (teacher.signInExists(mail, pass) == -1) {
             if (!teacher.mailExists(mail))
-                return -1 ;
-            else return -2 ;
-        }
-        else return teacher.signInExists(mail, pass);
+                return -1;
+            else return -2;
+        } else return teacher.signInExists(mail, pass);
     }
 
     //public Account(String firstName, String lastName, String userName, String mail, String password, String gender,
@@ -34,7 +33,7 @@ public class TeacherValidation implements Validation {
     public int SignUp(Account account) {
         Teacher obj = new Teacher(account);
         try {
-            if (teacher.signUpExists(account.getMail(),account.getUserName()) != -1 || student.signUpExists(account.getMail(),account.getUserName()) != -1)
+            if (teacher.signUpExists(account.getMail(), account.getUserName()) != -1 || student.signUpExists(account.getMail(), account.getUserName()) != -1)
                 return -1;
             teacher.insert(obj);
             return teacher.getID(account.getMail());

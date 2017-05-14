@@ -28,6 +28,7 @@
             background-repeat: no-repeat;
             background-size: 1800px;
         }
+
         .navbar, .panel {
             box-shadow: 0px 2px 20px 2px black;
             background: transparent;
@@ -44,10 +45,10 @@
         }
     </style>
     <script>
-        function empty(){
-            document.getElementById("course-description").value="";
-            document.getElementById("course-name").value="";
-            document.getElementById("alert").innerHTML="Add Course....";
+        function empty() {
+            document.getElementById("course-description").value = "";
+            document.getElementById("course-name").value = "";
+            document.getElementById("alert").innerHTML = "Add Course....";
         }
     </script>
 </head>
@@ -63,7 +64,8 @@
             <li class="active"><a href="http://localhost:8080/Learn-For-Fun/profile/${type}/${userID}">Home</a></li>
             <li><a href="http://localhost:8080/Learn-For-Fun/showCourses/allCourses/${type}/${userID}">Courses</a></li>
             <li><a href="http://localhost:8080/Learn-For-Fun/createCourse/${type}/${userID}">Create Course</a></li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/showCourses/createdCourses/${type}/${userID}">Created Courses</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/showCourses/createdCourses/${type}/${userID}">Created
+                Courses</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -75,12 +77,15 @@
                     <c:forEach items="${notifizers}" var="notifizer">
                         <a href="http://localhost:8080/Learn-For-Fun/showGames/teacher/${userID}/${notifizer.courseID}">
                             <span class="glyphicon glyphicon-user" style="color: black"></span>
-                                ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered in.</a>
+                                ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered
+                            in.</a>
                     </c:forEach>
                 </div>
             </li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span
+                    class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span
+                    class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
         </ul>
     </div>
 </nav>
@@ -98,13 +103,15 @@
         </div>
         <div class="form-group">
             CourseName
-            <input type="text" class="form-control" id="course-name" name="coursename" placeholder="Enter Course Name" required>
-            <input type="hidden" class="form-control" id = "type" value="${type}">
-            <input type="hidden" class="form-control" id = "user-id" value="${userID}">
+            <input type="text" class="form-control" id="course-name" name="coursename" placeholder="Enter Course Name"
+                   required>
+            <input type="hidden" class="form-control" id="type" value="${type}">
+            <input type="hidden" class="form-control" id="user-id" value="${userID}">
         </div>
         <div class="form-group">
             Course Description
-            <textarea class="form-control" rows="5" id="course-description" name="courseDescription" placeholder="Description"></textarea>
+            <textarea class="form-control" rows="5" id="course-description" name="courseDescription"
+                      placeholder="Description"></textarea>
         </div>
         <input type="button" value="Add Course" class="btn btn-danger" data-ng-click="addCourse(courseForm.$valid)">
     </form>

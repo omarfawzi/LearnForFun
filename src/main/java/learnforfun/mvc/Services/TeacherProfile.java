@@ -9,6 +9,7 @@ import learnforfun.mvc.Models.Account;
  */
 public class TeacherProfile implements UserProfile {
     private TeacherDAO teacher = new TeacherDAOImpl();
+
     @Override
     public Account getAccount(int id) {
         return teacher.getAccount(id);

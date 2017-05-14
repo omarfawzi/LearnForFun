@@ -6,46 +6,46 @@ import learnforfun.mvc.Models.Course;
 
 import java.util.ArrayList;
 
-public class CourseService
-{
+public class CourseService {
     private CourseDAO courseDAO = new CourseDAOImpl();
-    public void addCourse(Course course){
+
+    public void addCourse(Course course) {
         courseDAO.insert(course);
     }
 
-    public void deleteCourse(int ID){
+    public void deleteCourse(int ID) {
         courseDAO.delete(ID);
     }
 
-    public int getCourseID(String name){
+    public int getCourseID(String name) {
         return courseDAO.getID(name);
     }
 
-    public ArrayList<Course> showTeacherCourses(int ID){
+    public ArrayList<Course> showTeacherCourses(int ID) {
         return courseDAO.TeacherCourses(ID);
     }
 
-    public ArrayList<Course> showAllCourses(){
+    public ArrayList<Course> showAllCourses() {
         return courseDAO.AllCourses();
     }
 
-    public boolean registerCourse(Course course){
-        return courseDAO.register(course.getID(),course.getUserID());
+    public boolean registerCourse(Course course) {
+        return courseDAO.register(course.getID(), course.getUserID());
     }
 
-    public boolean unregisterCourse(Course course){
-        return courseDAO.unregister(course.getID(),course.getUserID());
+    public boolean unregisterCourse(Course course) {
+        return courseDAO.unregister(course.getID(), course.getUserID());
     }
 
-    public ArrayList<Integer> getRegisteredUsers(int courseID){
+    public ArrayList<Integer> getRegisteredUsers(int courseID) {
         return courseDAO.getRegisteredUsers(courseID);
     }
 
-    public ArrayList<Integer> getRegisteredCourses(int userID){
+    public ArrayList<Integer> getRegisteredCourses(int userID) {
         return courseDAO.registeredCourses(userID);
     }
 
-    public Integer getCourseowner(int courseID){
+    public Integer getCourseowner(int courseID) {
         return courseDAO.getCourseowner(courseID);
     }
 

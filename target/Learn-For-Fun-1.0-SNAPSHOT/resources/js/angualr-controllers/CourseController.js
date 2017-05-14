@@ -29,8 +29,8 @@ app.controller('CourseController', ["$scope", "$http", function ($scope, $http) 
             }
         }
     };
-    $scope.registerCourse = function (userID,courseID) {
-        var alert =  document.getElementById(courseID);
+    $scope.registerCourse = function (userID, courseID) {
+        var alert = document.getElementById(courseID);
         var dat = {
             "ID": courseID,
             "userID": userID
@@ -40,18 +40,18 @@ app.controller('CourseController', ["$scope", "$http", function ($scope, $http) 
                 'Content-Type': 'application/json;charset=utf-8;'
             }
         };
-        var url = "http://localhost:8080/Learn-For-Fun/registerCourse/"+ userID+'/' + courseID ;
+        var url = "http://localhost:8080/Learn-For-Fun/registerCourse/" + userID + '/' + courseID;
         $http.post(url, dat, config).then(function (response) {
             if (response.data == true)
                 alert.innerHTML = "Course Registered Successfully";
             else
-                alert.innerHTML ="Error";
+                alert.innerHTML = "Error";
         }, function (response) {
             alert.innerHTML = "Error";
         });
     };
-    $scope.unregisterCourse = function (userID,courseID) {
-        var alert =  document.getElementById(courseID);
+    $scope.unregisterCourse = function (userID, courseID) {
+        var alert = document.getElementById(courseID);
         var dat = {
             "ID": courseID,
             "userID": userID
@@ -61,12 +61,12 @@ app.controller('CourseController', ["$scope", "$http", function ($scope, $http) 
                 'Content-Type': 'application/json;charset=utf-8;'
             }
         };
-        var url = "http://localhost:8080/Learn-For-Fun/unregisterCourse/"+ userID+'/' + courseID ;
+        var url = "http://localhost:8080/Learn-For-Fun/unregisterCourse/" + userID + '/' + courseID;
         $http.post(url, dat, config).then(function (response) {
             if (response.data == true)
                 alert.innerHTML = "Course Un-Registered Successfully";
             else
-                alert.innerHTML ="Error";
+                alert.innerHTML = "Error";
         }, function (response) {
             alert.innerHTML = "Error";
         });

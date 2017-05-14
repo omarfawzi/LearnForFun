@@ -106,7 +106,7 @@ app.controller('GameController', ["$scope", "$http", function ($scope, $http) {
                 'Content-Type': 'application/json;charset=utf-8;'
             }
         };
-        var url = "http://localhost:8080/Learn-For-Fun/deleteTF/"+gameID;
+        var url = "http://localhost:8080/Learn-For-Fun/deleteTF/" + gameID;
         $http.post(url, null, config).then(function (response) {
             window.alert("Game deleted");
             window.location.reload();
@@ -120,7 +120,7 @@ app.controller('GameController', ["$scope", "$http", function ($scope, $http) {
                 'Content-Type': 'application/json;charset=utf-8;'
             }
         };
-        var url = "http://localhost:8080/Learn-For-Fun/deleteMCQ/"+gameID;
+        var url = "http://localhost:8080/Learn-For-Fun/deleteMCQ/" + gameID;
         $http.post(url, null, config).then(function (response) {
             window.alert("Game deleted");
             window.location.reload();
@@ -134,7 +134,7 @@ app.controller('GameController', ["$scope", "$http", function ($scope, $http) {
                 'Content-Type': 'application/json;charset=utf-8;'
             }
         };
-        var url = "http://localhost:8080/Learn-For-Fun/deleteHangMan/"+gameID;
+        var url = "http://localhost:8080/Learn-For-Fun/deleteHangMan/" + gameID;
         $http.post(url, null, config).then(function (response) {
             window.alert("Game deleted");
             window.location.reload();
@@ -142,53 +142,53 @@ app.controller('GameController', ["$scope", "$http", function ($scope, $http) {
             window.alert("Fatal Error");
         });
     };
-    $scope.comment = function (type,userID,gameID,courseID) {
+    $scope.comment = function (type, userID, gameID, courseID) {
         var config = {
             headers: {
                 'Content-Type': 'application/json;charset=utf-8;'
             }
         };
 
-        var comment ;
-        var alert ;
-        var place ;
+        var comment;
+        var alert;
+        var place;
         if (type == "TF") {
             alert = document.getElementById(gameID + ".alertTF");
-            place =  document.getElementById("tfComment" + gameID);
+            place = document.getElementById("tfComment" + gameID);
         }
-        else if (type == "MCQ"){
+        else if (type == "MCQ") {
             alert = document.getElementById(gameID + ".MCQalert");
-            place =  document.getElementById("MCQComment" + gameID);
+            place = document.getElementById("MCQComment" + gameID);
         }
         else {
             alert = document.getElementById(gameID + ".Hangmanalert");
-            place =  document.getElementById("HangmanComment" + gameID);
+            place = document.getElementById("HangmanComment" + gameID);
         }
-        comment=place.value;
+        comment = place.value;
         var dat = {
-            "userID":userID,
-            "gameID":gameID,
-            "courseID":courseID,
-            "Comment":comment
+            "userID": userID,
+            "gameID": gameID,
+            "courseID": courseID,
+            "Comment": comment
         };
 
-        var url ;
+        var url;
         if (type == "TF")
-            url = "http://localhost:8080/Learn-For-Fun/addCommentTF/"+userID+"/"+gameID + "/"+courseID +"/"+comment;
+            url = "http://localhost:8080/Learn-For-Fun/addCommentTF/" + userID + "/" + gameID + "/" + courseID + "/" + comment;
         else if (type == "MCQ")
-            url = "http://localhost:8080/Learn-For-Fun/addCommentMCQ/"+userID+"/"+gameID + "/"+courseID +"/"+comment;
+            url = "http://localhost:8080/Learn-For-Fun/addCommentMCQ/" + userID + "/" + gameID + "/" + courseID + "/" + comment;
         else
-            url = "http://localhost:8080/Learn-For-Fun/addCommentHangman/"+userID+"/"+gameID + "/"+courseID +"/"+comment;
-        if (comment!= "") {
+            url = "http://localhost:8080/Learn-For-Fun/addCommentHangman/" + userID + "/" + gameID + "/" + courseID + "/" + comment;
+        if (comment != "") {
             $http.post(url, dat, config).then(function (response) {
                 alert.innerHTML = "Comment added";
                 window.location.reload();
-                place.value ="";
+                place.value = "";
             }, function (response) {
                 alert.innerHTML = "Fatal Error";
             });
         }
-        else{
+        else {
             alert.innerHTML = "You should enter a valid comment";
         }
     }

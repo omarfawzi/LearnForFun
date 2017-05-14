@@ -29,6 +29,7 @@
             background-repeat: no-repeat;
             background-size: 1800px;
         }
+
         .navbar, .panel {
             box-shadow: 0px 2px 20px 2px black;
             background: transparent;
@@ -66,12 +67,15 @@
                     <c:forEach items="${notifizers}" var="notifizer">
                         <a href="http://localhost:8080/Learn-For-Fun/showGames/teacher/${userID}/${notifizer.courseID}">
                             <span class="glyphicon glyphicon-user" style="color: black"></span>
-                                ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered in.</a>
+                                ${notifizer.notifizer} published a new ${notifizer.type} in a course you are registered
+                            in.</a>
                     </c:forEach>
                 </div>
             </li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
-            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/profileSettings/${type}/${userID}"><span
+                    class="glyphicon glyphicon-user"></span> ${account.userName}</a></li>
+            <li><a href="http://localhost:8080/Learn-For-Fun/signout/${account.userName}"><span
+                    class="glyphicon glyphicon-log-out"></span> Sign Out</a></li>
         </ul>
     </div>
 </nav>
@@ -79,40 +83,44 @@
 <br>
 <br>
 <br>
-<input type="hidden" class="form-control" id = "type" value="${type}">
-<input type="hidden" class="form-control" id = "user-id" value="${userID}">
+<input type="hidden" class="form-control" id="type" value="${type}">
+<input type="hidden" class="form-control" id="user-id" value="${userID}">
 
 <div class="container" id="try">
     <div class="row">
-<c:forEach items="${registeredCourses}" var="ids">
-    <input type="hidden" name="registeredCourse" value="${ids}">
-</c:forEach>
-    <c:forEach items="${courses}" var="course">
-        <div class="col-sm-4">
-            <div class="panel panel-primary">
-                <div class="panel-body">
-                    <div class="form-group">
-                        <div class="alert alert-info alert-dismissable">
-                            <a class="panel-close close" data-dismiss="alert">-</a>
-                            <i class="fa fa-coffee"></i>
-                            <p style="color: black" id="${course.ID}">Waiting for input...</p>
+        <c:forEach items="${registeredCourses}" var="ids">
+            <input type="hidden" name="registeredCourse" value="${ids}">
+        </c:forEach>
+        <c:forEach items="${courses}" var="course">
+            <div class="col-sm-4">
+                <div class="panel panel-primary">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div class="alert alert-info alert-dismissable">
+                                <a class="panel-close close" data-dismiss="alert">-</a>
+                                <i class="fa fa-coffee"></i>
+                                <p style="color: black" id="${course.ID}">Waiting for input...</p>
+                            </div>
+                            Course Name
+                            <input type="text" class="form-control" id="course-name" name="coursename" readonly
+                                   value="${course.name}">
                         </div>
-                        Course Name
-                        <input type="text" class="form-control" id="course-name" name="coursename"readonly value="${course.name}">
+                        <div class="form-group">
+                            Course Description
+                            <textarea class="form-control" rows="5" id="course-description" name="courseDescription"
+                                      readonly>${course.description}
+                            </textarea>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        Course Description
-                        <textarea class="form-control" rows="5" id="course-description" name="courseDescription"readonly>${course.description}
-                        </textarea>
+                    <div class="panel-footer" name="div" data-ng-controller="CourseController" id="main">
+                        <a type="button" class="btn btn-primary"
+                           href="http://localhost:8080/Learn-For-Fun/showGames/${type}/${userID}/${course.ID}">Show
+                            Games</a>
+                        <input type="hidden" name="courseID" value="${course.ID}">
                     </div>
-                </div>
-                <div class="panel-footer" name="div" data-ng-controller="CourseController" id="main">
-                    <a type="button" class="btn btn-primary" href="http://localhost:8080/Learn-For-Fun/showGames/${type}/${userID}/${course.ID}">Show Games</a>
-                    <input type="hidden" name="courseID" value="${course.ID}">
                 </div>
             </div>
-        </div>
-    </c:forEach>
+        </c:forEach>
     </div>
 </div>
 <br>

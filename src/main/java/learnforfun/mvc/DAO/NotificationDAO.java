@@ -9,5 +9,6 @@ import java.util.ArrayList;
  */
 public interface NotificationDAO {
     public void insert(Notifications notification);
-    public ArrayList <Notifications> getNotifications (String notifiedUser);
+
+    public ArrayList<Notifications> getNotifications(String notifiedUser);
 }

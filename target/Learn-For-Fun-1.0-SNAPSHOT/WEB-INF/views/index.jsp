@@ -37,7 +37,7 @@
 <form action="sign/student/" method="post">
     <button type="submit" value="student" class="hoverbutton"><span>Student </span></button>
 </form>
-        <form action="sign/teacher/" method="post">
+<form action="sign/teacher/" method="post">
     <button type="submit" value="teacher" class="hoverbutton"><span>Teacher </span></button>
 </form>
 </body>

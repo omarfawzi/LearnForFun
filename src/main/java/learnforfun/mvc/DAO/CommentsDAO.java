@@ -9,5 +9,6 @@ import java.util.ArrayList;
  */
 public interface CommentsDAO {
     public void insert(Comment comment);
-    public ArrayList<Comment> getComments(int courseID,int gameID);
+
+    public ArrayList<Comment> getComments(int courseID, int gameID);
 }

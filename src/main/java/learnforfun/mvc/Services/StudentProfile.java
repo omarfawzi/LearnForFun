@@ -9,6 +9,7 @@ import learnforfun.mvc.Models.Account;
  */
 public class StudentProfile implements UserProfile {
     private StudentDAO student = new StudentDAOImpl();
+
     @Override
     public Account getAccount(int id) {
         return student.getAccount(id);
@@ -16,7 +17,7 @@ public class StudentProfile implements UserProfile {
 
     @Override
     public Boolean updateAccount(Account account) {
-       return student.updateAccount(account);
+        return student.updateAccount(account);
     }
 
 }

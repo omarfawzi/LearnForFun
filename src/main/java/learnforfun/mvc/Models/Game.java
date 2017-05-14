@@ -12,23 +12,7 @@ public class Game {
     private int Votes;
     private double Rate;
 
-    public int getVotes() {
-		return Votes;
-	}
-
-	public void setVotes(int votes) {
-		Votes = votes;
-	}
-
-	public double getRate() {
-		return Rate;
-	}
-
-	public void setRate(double rate) {
-		Rate = rate;
-	}
-
-	public Game(Game other) {
+    public Game(Game other) {
         this.GameName = other.GameName;
         this.Question = other.Question;
         this.GameID = other.GameID;
@@ -42,6 +26,22 @@ public class Game {
         GameName = gameName;
         Question = question;
         GameID = gameID;
+    }
+
+    public int getVotes() {
+        return Votes;
+    }
+
+    public void setVotes(int votes) {
+        Votes = votes;
+    }
+
+    public double getRate() {
+        return Rate;
+    }
+
+    public void setRate(double rate) {
+        Rate = rate;
     }
 
     public String getGameName() {

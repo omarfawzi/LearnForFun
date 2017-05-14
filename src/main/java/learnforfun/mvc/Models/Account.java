@@ -19,7 +19,7 @@ public class Account {
 
     public Account() {
         super();
-        Age=0;
+        Age = 0;
     }
 
     public Account(Account other) {

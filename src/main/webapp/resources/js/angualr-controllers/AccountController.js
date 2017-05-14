@@ -1,5 +1,6 @@
 app.controller('AccountController', ["$scope", "$http", function ($scope, $http) {
     $scope.signUp = function (valid) {
+
         if (valid) {
             var firstname = document.getElementById("signUp-firstname").value;
             var email = document.getElementById("signUp-email").value;
@@ -13,6 +14,7 @@ app.controller('AccountController', ["$scope", "$http", function ($scope, $http)
             var SignUpalert = document.getElementById("SignUp-alert");
 
             var Info;
+
             var dat = {
                 "password": pass,
                 "userName": username,

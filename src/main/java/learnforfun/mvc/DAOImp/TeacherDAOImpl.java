@@ -1,16 +1,11 @@
 package learnforfun.mvc.DAOImp;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
-import learnforfun.mvc.Models.Account;
-import org.springframework.jdbc.core.JdbcTemplate;
-
 import learnforfun.mvc.DAO.AccountDAO;
 import learnforfun.mvc.DAO.TeacherDAO;
+import learnforfun.mvc.Models.Account;
 import learnforfun.mvc.Models.Teacher;
+
+import java.sql.*;
 
 public class TeacherDAOImpl implements TeacherDAO {
     private PreparedStatement pstmt;
@@ -95,13 +90,12 @@ public class TeacherDAOImpl implements TeacherDAO {
             if (!mailExists(mail))
                 return -1;
             pstmt = con.prepareStatement("SELECT * FROM ACCOUNT where MAIL = ?");
-            pstmt.setString(1,mail);
+            pstmt.setString(1, mail);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next())
                 return rs.getInt("UID");
             return -1;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return -1;
         }
@@ -111,13 +105,12 @@ public class TeacherDAOImpl implements TeacherDAO {
     public Account getAccount(int id) {
         try {
             pstmt = con.prepareStatement("SELECT TEACHER.UID FROM TEACHER, ACCOUNT WHERE TEACHER.UID = ACCOUNT.UID AND TEACHER.UID = ?");
-            pstmt.setInt(1,id);
+            pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next())
-            return accountDAO.get(id);
+                return accountDAO.get(id);
             return null;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
@@ -128,6 +121,6 @@ public class TeacherDAOImpl implements TeacherDAO {
         int id = getID(account.getMail());
         if (id == -1)
             return false;
-        return accountDAO.update(account.getUserID(),account);
+        return accountDAO.update(account.getUserID(), account);
     }
 }

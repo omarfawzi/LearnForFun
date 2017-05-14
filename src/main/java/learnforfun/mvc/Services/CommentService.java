@@ -11,10 +11,12 @@ import java.util.ArrayList;
  */
 public class CommentService {
     private CommentsDAO commentsDAO = new CommentsDAOImpl();
-    public void insert(Comment comment){
+
+    public void insert(Comment comment) {
         commentsDAO.insert(comment);
     }
-    public ArrayList<Comment> getComments(int courseID, int gameID){
-        return commentsDAO.getComments(courseID,gameID);
+
+    public ArrayList<Comment> getComments(int courseID, int gameID) {
+        return commentsDAO.getComments(courseID, gameID);
     }
 }

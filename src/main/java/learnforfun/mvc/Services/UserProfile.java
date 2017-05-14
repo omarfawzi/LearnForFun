@@ -7,5 +7,6 @@ import learnforfun.mvc.Models.Account;
  */
 public interface UserProfile {
     public Account getAccount(int id);
+
     public Boolean updateAccount(Account account);
 }

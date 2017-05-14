@@ -5,9 +5,100 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dba6092a-6e6c-43dc-9698-f55560d08a36" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/learnforfun/mvc/Controllers/HomeController.class" afterPath="$PROJECT_DIR$/target/classes/learnforfun/mvc/Controllers/HomeController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/addGames_jsp.class" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/addGames_jsp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/HomeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/CommentsDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/CommentsDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/CourseDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/CourseDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/HangManDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/HangManDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/MultipleChoiceDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/MultipleChoiceDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/NotificationDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/NotificationDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/PlayDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/PlayDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/StudentDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/StudentDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/TeacherDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/TeacherDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/True_FalseDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/True_FalseDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/UserHistoryDAO.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/UserHistoryDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/CommentsDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/CommentsDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/CourseDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/CourseDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/HangManDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/HangManDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/MultipleChoiceDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/MultipleChoiceDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/NotificationDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/NotificationDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/PlayDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/PlayDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/StudentDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/StudentDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/TeacherDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/TeacherDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/True_FalseDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/True_FalseDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/UserHistoryDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/UserHistoryDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Account.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Account.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Achievement.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Achievement.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Comment.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Comment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Game.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/HangMan.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/HangMan.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/MultipleChoice.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/MultipleChoice.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Notifications.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Notifications.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/CommentService.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/CommentService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/CourseService.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/CourseService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/HangManService.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/HangManService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/MCQService.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/MCQService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/NotificationService.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/NotificationService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/ProfileFactory.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/ProfileFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/StudentProfile.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/StudentProfile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/StudentValidation.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/StudentValidation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/TFService.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/TFService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/TeacherProfile.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/TeacherProfile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/TeacherValidation.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/TeacherValidation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/UserProfile.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/UserProfile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/ValidationFactory.java" afterPath="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/ValidationFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/404.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/404.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/account.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/account.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addGames.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addGames.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/courses.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/courses.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createCourse.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createCourse.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/games.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/games.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hangman.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hangman.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/font-awesome.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/font-awesome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/hangman.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/hangman.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/learnforfun.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/learnforfun.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/src/main/webapp/resources/fonts/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/AccountController.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/AccountController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/CourseController.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/CourseController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/GameController.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/GameController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/hangman.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/hangman.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/users.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/404.jsp" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/404.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/account.jsp" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/account.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/addGames.jsp" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/addGames.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/courses.jsp" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/courses.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/createCourse.jsp" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/createCourse.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/games.jsp" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/games.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/hangman.jsp" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/hangman.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/homepage.jsp" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/homepage.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/index.jsp" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/profile.jsp" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/WEB-INF/views/profile.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/css/font-awesome.css" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/css/font-awesome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/css/hangman.css" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/css/hangman.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/css/learnforfun.css" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/css/learnforfun.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/css/style.css" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/fonts/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/js/angualr-controllers/CourseController.js" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/js/angualr-controllers/CourseController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/js/angualr-controllers/GameController.js" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/js/angualr-controllers/GameController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/js/hangman.js" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/js/hangman.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/js/users.js" afterPath="$PROJECT_DIR$/target/Learn-For-Fun-1.0-SNAPSHOT/resources/js/users.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/conf/logging.properties" afterPath="$PROJECT_DIR$/target/tomcat/conf/logging.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" afterPath="$PROJECT_DIR$/target/tomcat/conf/tomcat-users.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/conf/web.xml" afterPath="$PROJECT_DIR$/target/tomcat/conf/web.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-05-14" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-05-14" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/account_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/account_jsp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/addGames_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/addGames_jsp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/courses_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/courses_jsp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/games_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/games_jsp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/homepage_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/homepage_jsp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/index_jsp.java" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Learn-For-Fun/org/apache/jsp/WEB_002dINF/views/index_jsp.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,34 +115,18 @@
       <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="72" column="37" lean-forward="true" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+            <state relative-caret-position="567">
+              <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="149" column="28" lean-forward="true" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserHistoryDAOImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/UserHistoryDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <marker date="1494690666717" expanded="true" signature="878:927" ph="INSERT INTO signed_in_users... " />
-                <marker date="1494690666717" expanded="true" signature="1204:1251" ph="DELETE FROM " />
-                <marker date="1494690666717" expanded="true" signature="1533:1581" ph="SELECT * FRO... SIGNED_IN_USERS" />
+                <element signature="e#12030#12038#0" expanded="true" />
+                <element signature="e#15678#15686#0" expanded="true" />
+                <element signature="e#16683#16691#0" expanded="true" />
+                <element signature="e#17658#17666#0" expanded="true" />
+                <element signature="e#19702#19711#0" expanded="true" />
+                <element signature="e#19735#19744#0" expanded="true" />
+                <element signature="e#20168#20177#0" expanded="true" />
+                <element signature="e#20648#20657#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,6 +159,8 @@
       <find>catagoryNam</find>
       <find>mav</find>
       <find>acc</find>
+      <find>Home</find>
+      <find>hold</find>
     </findStrings>
     <replaceStrings>
       <replace>Student</replace>
@@ -106,7 +183,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/True_FalseDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/hangman.css" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/TeacherDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/AccountDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/StudentDAOImpl.java" />
@@ -114,11 +190,9 @@
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/StudentValidation.java" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/HangManDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/HangManService.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/hangman.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/404.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/AccountController.js" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/UserdDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/EnableAutoConfiguration.java" />
@@ -147,15 +221,18 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
         <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/CommentsDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/GameController.js" />
-        <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/games.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addGames.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/courses.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createCourse.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hangman.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/profile.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/AccountController.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createCourse.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/css/hangman.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/js/hangman.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/courses.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hangman.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/HomeController.java" />
       </list>
     </option>
   </component>
@@ -234,7 +311,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-9" />
-    <option name="width" value="1932" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -283,6 +361,68 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="LearnForFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LearnForFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LearnForFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LearnForFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LearnForFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LearnForFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LearnForFun" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mvc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -906,15 +1046,17 @@
       <workItem from="1494582161360" duration="35297000" />
       <workItem from="1494675070410" duration="12229000" />
       <workItem from="1494694408472" duration="5949000" />
-      <workItem from="1494706857734" duration="3873000" />
+      <workItem from="1494706857734" duration="4233000" />
+      <workItem from="1494752056908" duration="5557000" />
+      <workItem from="1494767356521" duration="4062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="382052000" />
+    <option name="totallyTimeSpent" value="392031000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="0" width="1932" height="1048" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -937,11 +1079,11 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34687155" sideWeight="0.5062959" order="14" side_tool="true" content_ui="tabs" x="0" y="0" width="1914" height="1030" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34687155" sideWeight="0.5062959" order="14" side_tool="true" content_ui="tabs" x="0" y="0" width="1914" height="1030" />
       <window_info id="Sequence" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32915717" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19174504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19114584" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -985,37 +1127,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/EnableAutoConfiguration.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/Validation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/ValidationFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/ProfileFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/MCQService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/GamesService.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/HangManService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -1042,13 +1153,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1377">
           <caret line="66" column="45" lean-forward="false" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-219">
-          <caret line="73" column="38" lean-forward="false" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1117,13 +1221,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Pair.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAO/NotificationDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1146,27 +1243,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/AccountDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="861">
-          <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding>
-            <marker date="1492751816751" expanded="true" signature="900:1021" ph="INSERT INTO ACCOUNT... " />
-            <marker date="1492751816751" expanded="true" signature="1704:1835" ph="UPDATE ACCOU... " />
-            <marker date="1492751816751" expanded="true" signature="2528:2581" ph="SELECT * FRO... ACCOUNT" />
-            <marker date="1492751816751" expanded="true" signature="2879:2914" ph="SELECT * FRO... ACCOUNT" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/NotificationDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="987">
           <caret line="51" column="20" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
-            <marker date="1494685072984" expanded="true" signature="968:1064" ph="INSERT INTO NOTIFICATIONS... " />
-            <marker date="1494685072984" expanded="true" signature="1645:1696" ph="SELECT * FRO... NOTIFICATIONS" />
           </folding>
         </state>
       </provider>
@@ -1176,8 +1258,8 @@
         <state relative-caret-position="506">
           <caret line="48" column="50" lean-forward="false" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
           <folding>
-            <element signature="e#1270#1271#0" expanded="false" />
-            <element signature="e#1327#1328#0" expanded="false" />
+            <element signature="e#1283#1284#0" expanded="false" />
+            <element signature="e#1340#1341#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1239,7 +1321,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-168">
           <caret line="38" column="18" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1247,7 +1328,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1255,13 +1335,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="268">
           <caret line="50" column="100" lean-forward="false" selection-start-line="50" selection-start-column="85" selection-end-line="50" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1466#1475#0" expanded="false" />
-            <marker date="1494688302921" expanded="true" signature="935:1008" ph="INSERT INTO COMMENTS... " />
-            <marker date="1494688302921" expanded="true" signature="1535:1577" ph="SELECT * FRO... COMMENTS" />
-            <marker date="1494688302921" expanded="true" signature="1535:1593" ph="SELECT * FRO... COMMENTS" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1280,50 +1353,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/account.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1281">
-          <caret line="61" column="27" lean-forward="false" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addGames.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1701">
           <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/courses.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1659">
-          <caret line="79" column="22" lean-forward="false" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createCourse.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1848">
-          <caret line="88" column="22" lean-forward="false" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hangman.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1869">
-          <caret line="89" column="22" lean-forward="false" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1533">
-          <caret line="73" column="22" lean-forward="false" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -1340,36 +1373,200 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="22" lean-forward="true" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="149" column="28" lean-forward="true" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
+        <state relative-caret-position="3129">
+          <caret line="149" column="28" lean-forward="false" selection-start-line="149" selection-start-column="28" selection-end-line="149" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/AccountDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <marker date="1492751816751" expanded="true" signature="900:1021" ph="INSERT INTO ACCOUNT... " />
+            <marker date="1492751816751" expanded="true" signature="1704:1835" ph="UPDATE ACCOU... " />
+            <marker date="1492751816751" expanded="true" signature="2528:2581" ph="SELECT * FRO... ACCOUNT" />
+            <marker date="1492751816751" expanded="true" signature="2879:2914" ph="SELECT * FRO... ACCOUNT" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/ValidationFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="42" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Services/TeacherValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="22" column="29" lean-forward="false" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/hangman.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1764">
+          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/hangman.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="40" column="32" lean-forward="false" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/angualr-controllers/AccountController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Models/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1309#1310#0" expanded="false" />
+            <element signature="e#1338#1339#0" expanded="false" />
+            <element signature="e#1379#1380#0" expanded="false" />
+            <element signature="e#1415#1416#0" expanded="false" />
+            <element signature="e#1451#1452#0" expanded="false" />
+            <element signature="e#1483#1484#0" expanded="false" />
+            <element signature="e#1533#1534#0" expanded="false" />
+            <element signature="e#1570#1571#0" expanded="false" />
+            <element signature="e#1605#1606#0" expanded="false" />
+            <element signature="e#1636#1637#0" expanded="false" />
+            <element signature="e#1684#1685#0" expanded="false" />
+            <element signature="e#1719#1720#0" expanded="false" />
+            <element signature="e#1754#1755#0" expanded="false" />
+            <element signature="e#1785#1786#0" expanded="false" />
+            <element signature="e#1833#1834#0" expanded="false" />
+            <element signature="e#1868#1869#0" expanded="false" />
+            <element signature="e#1899#1900#0" expanded="false" />
+            <element signature="e#1926#1927#0" expanded="false" />
+            <element signature="e#1966#1967#0" expanded="false" />
+            <element signature="e#1993#1994#0" expanded="false" />
+            <element signature="e#2107#2108#0" expanded="false" />
+            <element signature="e#2142#2143#0" expanded="false" />
+            <element signature="e#2175#2176#0" expanded="false" />
+            <element signature="e#2204#2205#0" expanded="false" />
+            <element signature="e#2248#2249#0" expanded="false" />
+            <element signature="e#2279#2280#0" expanded="false" />
+            <element signature="e#2311#2312#0" expanded="false" />
+            <element signature="e#2339#2340#0" expanded="false" />
+            <element signature="e#2381#2382#0" expanded="false" />
+            <element signature="e#2410#2411#0" expanded="false" />
+            <element signature="e#2440#2441#0" expanded="false" />
+            <element signature="e#2468#2469#0" expanded="false" />
+            <element signature="e#2508#2509#0" expanded="false" />
+            <element signature="e#2537#2538#0" expanded="false" />
+            <element signature="e#2564#2565#0" expanded="false" />
+            <element signature="e#2590#2591#0" expanded="false" />
+            <element signature="e#2625#2626#0" expanded="false" />
+            <element signature="e#2650#2651#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hangman.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="80" column="40" lean-forward="false" selection-start-line="80" selection-start-column="40" selection-end-line="80" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/DAOImp/UserHistoryDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="177">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
-            <marker date="1494690666717" expanded="true" signature="878:927" ph="INSERT INTO signed_in_users... " />
-            <marker date="1494690666717" expanded="true" signature="1204:1251" ph="DELETE FROM " />
-            <marker date="1494690666717" expanded="true" signature="1533:1581" ph="SELECT * FRO... SIGNED_IN_USERS" />
+            <marker date="1494758044181" expanded="true" signature="879:928" ph="INSERT INTO signed_in_users... " />
+            <marker date="1494758044181" expanded="true" signature="1206:1253" ph="DELETE FROM " />
+            <marker date="1494758044181" expanded="true" signature="1536:1584" ph="SELECT * FRO... SIGNED_IN_USERS" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="73" column="22" lean-forward="false" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/account.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="99" column="39" lean-forward="false" selection-start-line="99" selection-start-column="39" selection-end-line="99" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/createCourse.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2352">
+          <caret line="112" column="19" lean-forward="false" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/courses.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="119" column="35" lean-forward="false" selection-start-line="119" selection-start-column="35" selection-end-line="119" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="47" column="26" lean-forward="true" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/learnforfun/mvc/Controllers/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="72" column="37" lean-forward="true" selection-start-line="72" selection-start-column="37" selection-end-line="72" selection-end-column="37" />
+        <state relative-caret-position="567">
+          <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#12030#12038#0" expanded="true" />
+            <element signature="e#15678#15686#0" expanded="true" />
+            <element signature="e#16683#16691#0" expanded="true" />
+            <element signature="e#17658#17666#0" expanded="true" />
+            <element signature="e#19702#19711#0" expanded="true" />
+            <element signature="e#19735#19744#0" expanded="true" />
+            <element signature="e#20168#20177#0" expanded="true" />
+            <element signature="e#20648#20657#0" expanded="true" />
           </folding>
         </state>
       </provider>
