@@ -8,7 +8,7 @@
     <artifactId>Learn-For-Fun</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
-        <springsecurity.version>4.0.1.RELEASE</springsecurity.version>
+        <springsecurity.version>5.2.10.RELEASE</springsecurity.version>
         <hibernate.version>4.3.6.Final</hibernate.version>
         <mysql.version>5.1.31</mysql.version>
         <start-class>...</start-class>
